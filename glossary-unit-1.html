@@ -1,0 +1,1424 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
+<title>Unit 1 Glossary</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: revision index — sticky search bar, section rail on the left (chip row on phones), one column of term cards */
+:root {
+  --bg: #F2F5F4;
+  --surface: #FFFFFF;
+  --ink: #15222A;
+  --muted: #55646E;
+  --line: #D6DEDC;
+  --accent: #1B7357;
+  --accent-soft: #E1EFE9;
+  --key: #8F5500;
+  --key-soft: #FAEDD8;
+  --study: #2D4896;
+  --study-soft: #E5EAF7;
+  --hl: #FFF0A0;
+  --hl-ink: #5C4A00;
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1619; --surface: #162026; --ink: #E3EBE9; --muted: #9AA9A7; --line: #283439;
+    --accent: #5DC39B; --accent-soft: #15362A; --key: #E6A84F; --key-soft: #382912;
+    --study: #97ACEE; --study-soft: #1C2644; --hl: #4A4112; --hl-ink: #F3E08A; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1619; --surface: #162026; --ink: #E3EBE9; --muted: #9AA9A7; --line: #283439;
+  --accent: #5DC39B; --accent-soft: #15362A; --key: #E6A84F; --key-soft: #382912;
+  --study: #97ACEE; --study-soft: #1C2644; --hl: #4A4112; --hl-ink: #F3E08A; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--f-body); font-size: 16px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--bg);
+}
+.wrap {
+  max-width: 1120px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.sitenav { background: var(--surface); border-bottom: 1px solid var(--line); }
+.sitenav .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; padding-block: 8px; }
+.sitenav .brand { font-family: var(--f-display); font-weight: 700; font-size: 17px; letter-spacing: -.01em; color: var(--ink); text-decoration: none; }
+.sitenav .navlinks { display: flex; flex-wrap: wrap; gap: 4px; }
+.sitenav .navlinks a { padding: 6px 12px; border-radius: 6px; color: var(--ink); text-decoration: none; font-weight: 500; font-size: 15px; }
+.sitenav .navlinks a:hover { background: var(--accent-soft); }
+.sitenav .navlinks a[aria-current="page"] { background: var(--accent); color: var(--surface); }
+.sitenav .navlinks a[aria-current="true"] { background: var(--accent-soft); color: var(--accent); }
+.crumbs { font-size: 14px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.crumbs a { color: var(--accent); text-decoration: none; font-weight: 500; }
+.crumbs a:hover { text-decoration: underline; }
+
+/* Header */
+.masthead { padding-block: 40px 24px; display: grid; gap: 20px; }
+.eyebrow {
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--muted); display: flex; flex-wrap: wrap; gap: 4px 14px;
+}
+h1 {
+  font-family: var(--f-display); font-weight: 700; font-size: clamp(2rem, 5vw, 3.25rem);
+  line-height: 1.05; letter-spacing: -.02em; margin: 0; text-wrap: balance;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 .35em;
+}
+h1 .num { color: var(--accent); font-variant-numeric: tabular-nums; }
+.lede { margin: 0; max-width: 62ch; color: var(--muted); font-size: 1.05rem; }
+.lede strong { color: var(--ink); font-weight: 600; }
+
+.tip {
+  display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; align-items: start;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+  padding: 14px 16px; max-width: 760px; font-size: .95rem;
+}
+.tip b { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); padding-top: 3px; }
+.tip p { margin: 0; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: .85rem; color: var(--muted); align-items: center; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+
+/* Toolbar */
+.toolbar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.toolbar .wrap { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding-block: 12px; }
+.search {
+  flex: 1 1 260px; min-width: 0; position: relative;
+}
+.search input {
+  width: 100%; font: inherit; font-size: 15px; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--line); border-radius: 8px;
+  padding: 9px 12px 9px 36px;
+}
+.search input::placeholder { color: var(--muted); }
+.search svg { position: absolute; left: 11px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; stroke: var(--muted); fill: none; }
+.toggles { display: flex; gap: 8px; flex-wrap: wrap; }
+.toggle {
+  font: inherit; font-size: 14px; font-weight: 500; color: var(--ink); cursor: pointer;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 12px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.toggle .dot { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid var(--muted); }
+.toggle[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.toggle[aria-pressed="true"] .dot { background: var(--accent); border-color: var(--accent); }
+.count { font-family: var(--f-mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; margin-left: auto; white-space: nowrap; }
+
+button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Body layout */
+.layout { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 40px; padding-block: 28px 64px; }
+.rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 84px); align-self: start; }
+.rail h2 { font-family: var(--f-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; font-weight: 500; }
+.rail ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.rail a {
+  display: grid; grid-template-columns: 1.6em 1fr auto; gap: 6px; align-items: baseline;
+  color: var(--ink); text-decoration: none; padding: 6px 8px; border-radius: 6px; font-size: 14px; line-height: 1.35;
+}
+.rail a:hover { background: var(--surface); }
+.rail a .n { font-family: var(--f-mono); font-size: 11px; color: var(--accent); }
+.rail a .c { font-family: var(--f-mono); font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.rail a.empty { opacity: .4; }
+
+main { display: grid; gap: 48px; min-width: 0; }
+section.group { display: grid; gap: 14px; scroll-margin-top: 90px; }
+.group-head { display: grid; gap: 4px; padding-bottom: 6px; border-bottom: 2px solid var(--ink); }
+.group-head .meta { font-family: var(--f-mono); font-size: 12px; color: var(--muted); letter-spacing: .04em; display: flex; gap: 12px; flex-wrap: wrap; }
+.group-head .meta .n { color: var(--accent); }
+.group-head h3 { font-family: var(--f-display); font-weight: 700; font-size: 1.6rem; letter-spacing: -.01em; margin: 0; line-height: 1.15; text-wrap: balance; }
+.group-head p { margin: 0; color: var(--muted); font-size: .95rem; max-width: 70ch; }
+
+.entry {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+  padding: 18px 20px; display: grid; gap: 12px; scroll-margin-top: 90px;
+}
+.entry-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; }
+.entry-head h4 { font-family: var(--f-display); font-weight: 500; font-size: 1.3rem; margin: 0; line-height: 1.2; letter-spacing: -.005em; }
+.tags { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.tag {
+  font-family: var(--f-mono); font-size: 11px; letter-spacing: .05em; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 999px; white-space: nowrap;
+}
+.tag.key { background: var(--key-soft); color: var(--key); }
+.tag.hl { background: var(--hl); color: var(--hl-ink); }
+.pg { font-family: var(--f-mono); font-size: 12px; color: var(--muted); white-space: nowrap; }
+
+.entry-body { margin: 0; display: grid; gap: 10px; }
+.row { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 4px 16px; padding-top: 10px; border-top: 1px solid var(--line); }
+.row dt { font-family: var(--f-mono); font-size: 11px; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); padding-top: 4px; }
+.row dd { margin: 0; max-width: 68ch; }
+.row.link dd strong { font-weight: 600; }
+.kind {
+  display: inline-block; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .05em; text-transform: uppercase;
+  padding: 1px 7px; border-radius: 4px; margin-right: 6px; vertical-align: 2px; white-space: nowrap;
+}
+.kind-study { background: var(--study-soft); color: var(--study); }
+.kind-source { background: var(--accent-soft); color: var(--accent); }
+.kind-example, .kind-applied, .kind-none { background: transparent; color: var(--muted); border: 1px solid var(--line); }
+
+.wd {
+  display: inline-block; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .05em; text-transform: uppercase;
+  padding: 1px 7px; border-radius: 4px; margin-right: 6px; vertical-align: 2px; white-space: nowrap;
+}
+.wd-text { color: var(--accent); border: 1px solid var(--accent); }
+.wd-own { color: var(--key); border: 1px dashed var(--key); }
+
+.reveal {
+  display: none; justify-self: start; font: inherit; font-size: 14px; font-weight: 500; cursor: pointer;
+  color: var(--accent); background: var(--accent-soft); border: 1px solid transparent; border-radius: 8px; padding: 7px 14px;
+}
+body.test .reveal { display: inline-block; }
+body.test .entry:not(.open) .entry-body { display: none; }
+body.test .entry.open .reveal { background: transparent; border-color: var(--line); color: var(--muted); }
+
+
+/* Chapter tabs */
+.tabs { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; scroll-margin-top: 12px; }
+.tab {
+  font: inherit; color: var(--ink); text-align: left; cursor: pointer;
+  display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; align-content: start;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px;
+}
+.tab:hover { border-color: var(--muted); }
+.tab-num { font-family: var(--f-display); font-weight: 700; font-size: 1.2rem; color: var(--muted); font-variant-numeric: tabular-nums; line-height: 1; }
+.tab-body { display: grid; gap: 2px; min-width: 0; }
+.tab-title { font-weight: 600; line-height: 1.3; }
+.tab-meta { font-family: var(--f-mono); font-size: 11.5px; color: var(--muted); }
+.tab[aria-selected="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); background: var(--accent-soft); }
+.tab[aria-selected="true"] .tab-num { color: var(--accent); }
+.tab.dim { opacity: .7; }
+.scope { font-size: .85rem; color: var(--muted); margin: 0; width: 100%; }
+
+/* Chapter blocks */
+.chapter { display: grid; gap: 48px; }
+.ch-head { display: grid; gap: 16px; }
+.ch-head h2 {
+  font-family: var(--f-display); font-weight: 700; font-size: clamp(1.75rem, 4vw, 2.5rem);
+  line-height: 1.08; letter-spacing: -.02em; margin: 0; text-wrap: balance;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 .35em;
+}
+.ch-head h2 .num { color: var(--accent); font-variant-numeric: tabular-nums; }
+.rail-ch { font-family: var(--f-mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--accent); padding: 12px 8px 4px; }
+.rail-ch:first-child { padding-top: 0; }
+@media (max-width: 900px) { .rail-ch { display: none; } }
+
+.none-found { padding: 32px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: 10px; }
+
+footer { border-top: 1px solid var(--line); }
+footer .wrap { padding-block: 20px 32px; font-size: .85rem; color: var(--muted); }
+
+mark { background: var(--key-soft); color: inherit; border-radius: 2px; padding: 0 1px; }
+
+@media (max-width: 900px) {
+  .tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 24px; padding-top: 16px; }
+  .rail { position: static; }
+  .rail ol { display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
+  .rail a { display: inline-flex; white-space: nowrap; background: var(--surface); border: 1px solid var(--line); gap: 6px; }
+}
+@media (max-width: 600px) {
+  .tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .masthead { padding-block: 24px 16px; }
+  .row { grid-template-columns: minmax(0, 1fr); }
+  .entry { padding: 16px; }
+  .count { margin-left: 0; }
+  .tip { grid-template-columns: minmax(0, 1fr); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+@media print {
+  .toolbar, .rail, .reveal { display: none !important; }
+  .layout { grid-template-columns: 1fr; }
+  body.test .entry .entry-body { display: grid !important; }
+  .entry { break-inside: avoid; }
+}
+</style>
+
+<nav class="sitenav" aria-label="Site">
+  <div class="wrap"><a class="brand" href="index.html">IBDP Psychology Guide</a><div class="navlinks"><a href="glossary.html" aria-current="true">Glossary</a></div></div>
+</nav>
+
+<header class="wrap masthead">
+  <p class="crumbs" style="margin:0"><a href="glossary.html">Glossary</a><span aria-hidden="true">›</span><span>Unit 1</span></p>
+  <h1>Research methods and data interpretation glossary</h1>
+  <p class="lede">Revision definitions for every key term and concept, chapter by chapter. Each entry has a <strong>definition</strong>, a <strong>real-life example</strong>, and the <strong>study or source</strong> the textbook links it to.</p>
+  <div class="legend" aria-label="Legend">
+    <span><span class="tag key">Key term</span> listed in the textbook's key terms</span>
+    <span><span class="tag hl">Highlighted</span> highlighted in the chapter text</span>
+    <span><span class="kind kind-study">Study</span> empirical study</span>
+    <span><span class="kind kind-source">Source</span> theory or quotation</span>
+    <span><span class="kind kind-example">Textbook example</span> worked example, not a study</span>
+    <span><span class="kind kind-applied">Applied link</span> a connection the textbook does not make itself</span>
+    <span><span class="kind kind-none">No study</span> none given in this section</span>
+  </div>
+  <div class="legend" aria-label="Definition wording">
+    <span><span class="wd wd-text">Textbook, reworded</span> the textbook's definition, condensed</span>
+    <span><span class="wd wd-own">Glossary wording</span> written for this glossary where the textbook gives no definition</span>
+  </div>
+  <div class="tabs" id="tabs" role="tablist" aria-label="Chapters"></div>
+</header>
+
+<div class="toolbar">
+  <div class="wrap">
+    <label class="search" for="q">
+      <svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+      <input id="q" type="search" placeholder="Search all chapters" autocomplete="off" aria-label="Search all chapters">
+    </label>
+    <div class="toggles">
+      <button class="toggle" id="keyOnly" type="button" aria-pressed="false"><span class="dot"></span>Key terms only</button>
+      <button class="toggle" id="testMode" type="button" aria-pressed="false"><span class="dot"></span>Self-test</button>
+    </div>
+    <span class="count" id="count" aria-live="polite"></span>
+    <p class="scope" id="scope" hidden>Showing matches from every chapter. Clear the search to return to the selected chapter.</p>
+  </div>
+</div>
+
+<div class="wrap layout">
+  <nav class="rail" aria-label="Sections">
+    <h2>Sections</h2>
+    <ol id="nav"></ol>
+  </nav>
+  <main id="main"></main>
+</div>
+
+<footer>
+  <div class="wrap">Source: Popov, Unit 1: Research methods and data interpretation, sections 1.1 to 1.9 (pp. 5–63). Studies and quotations are as given in the textbook. Definitions marked “Textbook, reworded” condense the textbook's own definition; check the page number for the exact wording. Definitions marked “Glossary wording” and all real-life examples are written for this glossary.</div>
+</footer>
+
+<script>
+const KIND = {
+  study: ["kind-study", "Study"],
+  source: ["kind-source", "Source"],
+  example: ["kind-example", "Textbook example"],
+  applied: ["kind-applied", "Applied link"],
+  none: ["kind-none", "No study"]
+};
+
+const HANS = "Pfungst: Clever Hans (Goodwin, 2010)";
+const HANS_TEXT = "Wilhelm von Osten claimed he had taught his horse Hans to solve arithmetic, read, spell and understand German, answering by tapping his hoof. A German committee (the Hans Commission) tested him and concluded the abilities were genuine. Oskar Pfungst then tested one alternative hypothesis after another: with no spectators, Hans still answered correctly; with a different questioner, still correct; with blinders on, mostly wrong; and when the questioner did not know the answer, Hans failed. Questioners unknowingly became tense as the tapping approached the right number, and Hans read their posture and facial expressions. The investigation tried to falsify the existing claim rather than support it.";
+
+const G11 = [
+{
+  id: "science", title: "What is a scientific study?", pages: "pp. 5–6",
+  intro: "“Psychology is the scientific study of behaviour and mental processes.” This is the definition used throughout the book.",
+  terms: [
+    { t: "Psychology", key: 0, p: "pp. 5, 7",
+      def: "The scientific study of behaviour and mental processes. The word comes from the Greek psyche (soul) and logos (study): “the study of the soul”. It studies many phenomena that cannot be observed directly, so psychology tries to study the subjective (such as the mind) objectively.",
+      ex: "A psychologist studying exam anxiety measures heart rate and test scores, not just what students say they feel.",
+      link: { k: "none", title: "", text: "No study. The definition used throughout the textbook." } },
+    { t: "Scientific study", key: 1, p: "p. 5",
+      def: "A study that meets the criteria of science: it is based on empirical evidence, it is falsifiable, and there is a history of independent attempts to test the theory or replicate the study. This part of the definition of psychology excludes popular psychology.",
+      ex: "Testing whether a new revision technique works by comparing the test scores of two randomly assigned groups.",
+      link: { k: "study", title: HANS, text: HANS_TEXT } },
+    { t: "Popular psychology", key: 0, p: "p. 5",
+      def: "Simple and appealing explanations of behaviour that are not backed up by research evidence. It is excluded from psychology as a scientific study.",
+      ex: "A magazine quiz claiming your favourite colour reveals your personality.",
+      link: { k: "none", title: "", text: "No study. Where to draw the line between science and non-science is largely a TOK question." } },
+    { t: "Empirical evidence", key: 1, p: "pp. 5, 7",
+      def: "Evidence obtained through observation. An empirical approach to research relies on observation as a means of data collection. Science should be based on empirical evidence.",
+      ex: "Counting how many times students check their phones in a lesson, rather than guessing.",
+      link: { k: "study", title: HANS, text: "Pfungst tested each hypothesis through observation instead of accepting von Osten's claims." } },
+    { t: "Falsifiable (falsifiability)", key: 1, p: "p. 5",
+      def: "It should be possible for a psychological theory to be proven wrong. A scientific claim must be testable in a way that could show it to be false.",
+      ex: "“This medicine reduces headaches within an hour” is falsifiable; “this crystal brings good energy” is not.",
+      link: { k: "study", title: HANS, text: "The whole investigation attempted to falsify the existing theory (that Hans could do arithmetic) rather than support it." } },
+    { t: "Replicate (replication)", key: 1, p: "p. 5",
+      def: "Repeating a study independently to test whether its results hold. Science requires a history of independent attempts to test a theory or replicate a study.",
+      ex: "A lab in Japan repeats a memory experiment first done in the UK to see if it finds the same result.",
+      link: { k: "study", title: HANS, text: "Pfungst's independent investigation reached a different conclusion from the Hans Commission." } },
+    { t: "Science versus non-science demarcation", key: 0, own: 1, p: "p. 5",
+      def: "The question of where the line between science and non-science lies, one of the key topics in TOK. Empirical evidence, falsification/falsifiability and replication are important demarcation criteria.",
+      ex: "Debating whether astrology, economics or history counts as a science.",
+      link: { k: "none", title: "", text: "From the TOK box (p. 5), which asks for examples of these three concepts in other areas of knowledge." } }
+  ]
+},
+{
+  id: "behaviour", title: "Behaviour, mental processes and the focus of IB Psychology", pages: "pp. 7–8",
+  intro: "A scientific investigation relies on observation, but psychology studies many things that cannot be observed directly.",
+  terms: [
+    { t: "Behaviour", key: 1, p: "p. 7",
+      def: "Everything that can be registered: overt actions as well as gestures, facial expressions, verbal responses, endocrine reactions and so on. In the textbook, ‘behaviour’ refers to external, observable manifestations. The term is also used more generally, as an umbrella term for everything psychological, which is not exactly accurate but acceptable in IB Psychology.",
+      ex: "A student fidgeting, avoiding eye contact and speaking quickly during an oral presentation.",
+      link: { k: "none", title: "", text: "No study. By studying behaviour, we can infer something about the mental world." } },
+    { t: "Mental processes", key: 1, p: "p. 7",
+      def: "Internal patterns of information processing, such as attention, perception, memory and thinking. They stay invisible and cannot be observed directly, but we can observe the indirect effects they have on behaviour.",
+      ex: "You can't see a classmate's attention wandering, but you can see their eyes drifting to the window.",
+      link: { k: "none", title: "", text: "No study. The Activity box asks how far behavioural indicators can be used to infer attention, anxiety and embarrassment." } },
+    { t: "Focus of IB Psychology", key: 0, own: 1, p: "p. 7",
+      def: "IB Psychology focuses on academic knowledge and scientific research rather than counselling skills. Understanding psychological concepts and thinking critically about them matters in every sphere of psychology, including counselling, so these skills come first, much like studying aerodynamics before you are allowed to pilot a plane.",
+      ex: "You learn how memory research is done before learning how to help someone with memory problems.",
+      link: { k: "none", title: "", text: "No study." } }
+  ]
+}
+];
+
+const G12 = [
+{
+  id: "quant", title: "Quantitative research", pages: "pp. 9–11",
+  intro: "Quantitative and qualitative research have different purposes, and the nature of their data is different.",
+  terms: [
+    { t: "Quantitative research", key: 1, p: "p. 9",
+      def: "Research in which data comes in the form of numbers. Its aim is usually to arrive at numerically expressed laws that characterise the behaviour of large groups of individuals (universal laws), much like the natural sciences. It operates with variables and is more objective: the researcher is eliminated from the studied reality (Table 1.1).",
+      ex: "Surveying 2,000 students to find the average number of hours they sleep before exams.",
+      link: { k: "none", title: "", text: "No study. Its three types are the experiment, the correlational study and the quantitative descriptive study (Figure 1.2)." } },
+    { t: "Nomothetic approach", key: 1, p: "p. 9",
+      def: "In philosophy of science, an orientation towards deriving universal laws. It is the aim of quantitative research.",
+      ex: "Looking for a rule about how stress affects memory that applies to people in general.",
+      link: { k: "example", title: "Textbook example (p. 9)", text: "The laws of gravity in classic Newtonian physics, which describe the behaviour of all material objects." } },
+    { t: "Variable", key: 0, p: "p. 9",
+      def: "“Something that can take on varying values”: any characteristic that is objectively registered and quantified. Psychology deals with many internal characteristics that cannot be observed directly, so they need to be operationalised first.",
+      ex: "Hours of sleep, test score, age and number of friends are all variables.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Construct", key: 1, p: "p. 9",
+      def: "Any theoretically defined variable, such as violence, aggression, attraction, memory, attention, love or anxiety. To define a construct, you give it a definition that separates it from other similar and dissimilar constructs, based on theory. As a rule, constructs cannot be observed directly: they are ‘constructed’ from theory.",
+      ex: "‘Exam stress’ is a construct; you can't see it directly, only its signs.",
+      link: { k: "none", title: "", text: "No study. The Activity box asks you to operationalise belief in God, assertiveness, shyness, pain, love, friendship, prejudice, tolerance to uncertainty, intelligence and wisdom." } },
+    { t: "Operationalization", key: 1, p: "p. 10",
+      def: "Expressing a construct in terms of observable behaviour, so that it is directly observable and reliably measurable. There are usually multiple ways to operationalise a construct, and it is often a creative operationalisation that makes research outstanding.",
+      ex: "Measuring ‘exam stress’ as the number of hours of sleep lost in the week before exams.",
+      link: { k: "example", title: "Textbook examples (p. 10)", text: "Verbal aggression as “the number of insulting comments per hour” or “swear words per 100 words in the most recent social media posts”; anxiety as a questionnaire score, cortisol level in the blood, or weight loss." } },
+    { t: "Experiment", key: 1, p: "p. 10",
+      def: "A quantitative method that in its simplest form includes one independent variable (IV) and one dependent variable (DV), while other potentially important variables are controlled. The researcher manipulates the IV and expects the DV to change. Other variables are controlled, for example by dividing participants into groups randomly. It is the only method that allows cause-and-effect inferences.",
+      ex: "Randomly giving half a class a 10-minute walk before a test and comparing their scores with the other half.",
+      link: { k: "example", title: "Textbook example (p. 10)", text: "To test psychotherapy for depression, randomly assign participants to an experimental group (therapy) or a control group (none), then measure depression with a standardised clinical interview. IV: psychotherapy (yes or no). DV: depression." } },
+    { t: "Independent and dependent variables (IV and DV)", key: 0, p: "p. 10",
+      def: "The independent variable (IV) is the one manipulated by the researcher. The dependent variable (DV) is expected to change as the IV changes. If the DV differs between groups, you may conclude that a change in the IV ‘caused’ a change in the DV.",
+      ex: "IV: whether students listen to music while revising. DV: their score on a vocabulary test.",
+      link: { k: "example", title: "Textbook example (p. 10)", text: "IV: psychotherapy (yes or no). DV: level of depression, measured through a standardised diagnostic procedure." } },
+    { t: "Correlational study", key: 1, p: "p. 10",
+      def: "A study in which the researcher does not manipulate any variables (there are no IVs or DVs). Variables are measured and the relationship between them is quantified. Cause-and-effect inferences cannot be made: the direction of influence is unknown, and a third variable could influence both. What you observe is just ‘co-relation’: one variable changes as the other changes.",
+      ex: "Finding that students who sleep more get higher grades. Does sleep help grades, do good grades reduce worry and help sleep, or does something else affect both?",
+      link: { k: "example", title: "Textbook example (p. 10)", text: "A large positive correlation between adolescents' violent behaviour and hours spent watching violent TV. Watching violence may cause violence, violent adolescents may choose violent shows, or a third variable (such as low self-esteem) may influence both." } },
+    { t: "Quantitative descriptive study", key: 1, p: "p. 11",
+      def: "A quantitative study in which relationships between variables are not investigated; variables are approached separately. The aim is to describe the distribution of a variable in a population.",
+      ex: "A survey asking 1,000 teenagers how many hours a day they spend on social media.",
+      link: { k: "example", title: "Textbook examples (p. 11)", text: "A public opinion survey (“Do you support the current policies of the president?”), or clinical interviews and questionnaires to measure prevalence rates of a mental disorder." } },
+    { t: "Research method versus tool of data collection", key: 0, own: 1, p: "p. 11",
+      def: "Surveys and questionnaires can be used in two ways: as a research method in its own right (a quantitative descriptive study, describing a population), or as a data collection tool inside a broader study, such as an experiment or correlational study, where the questionnaire only measures a variable.",
+      ex: "A questionnaire on screen time is a method if you only want to know average screen time; it is a tool if you use it to correlate screen time with sleep.",
+      link: { k: "example", title: "Textbook examples (p. 11)", text: "A study of prevalence rates of depression (method), versus questionnaires measuring aggressiveness and insecurity in a correlational study of high school students (tool)." } }
+  ]
+},
+{
+  id: "qual", title: "Qualitative research", pages: "pp. 11–12",
+  intro: "Qualitative research goes beyond what can be measured, into the realm of experiences, interpretations and meanings.",
+  terms: [
+    { t: "Qualitative research", key: 1, p: "pp. 11–12",
+      def: "Research whose main focus is an in-depth study of a particular phenomenon, going beyond what can be objectively measured and quantified into human experiences, interpretations and meanings. It uses methods such as interviews or observations, and data usually comes as texts (interview transcripts, observational notes). Interpreting the data involves some subjectivity, but the analysis is deeper. The researcher is included in the studied reality.",
+      ex: "Interviewing eight students in depth about what moving to a new country felt like.",
+      link: { k: "none", title: "", text: "No study. Its methods covered in this unit are observation, interview (including focus group) and case study." } },
+    { t: "Idiographic approach", key: 1, p: "p. 12",
+      def: "In philosophy of science, an orientation towards in-depth analysis of a particular case or phenomenon, without trying to derive universally applicable laws. It is the aim of qualitative research.",
+      ex: "A detailed study of one teacher's experience of burnout, without claiming all teachers feel the same.",
+      link: { k: "none", title: "", text: "No study. Compare the nomothetic approach (Table 1.1)." } }
+  ]
+}
+];
+
+const G13 = [
+{
+  id: "overview", title: "Overview", pages: "p. 13",
+  intro: "No research study is perfect. The main parameters for judging a study's quality are generalizability, sampling, credibility and bias.",
+  terms: [
+    { t: "Methodological analysis", key: 0, p: "p. 13",
+      def: "‘Methodological’ refers to the procedures for obtaining knowledge. A methodological analysis is always an analysis of the strengths and limitations that led to a certain piece of knowledge, and of how far we can trust that knowledge. Understanding how a study is limited lets researchers design further studies to address those limitations.",
+      ex: "Before trusting a headline about a ‘study’, asking how many people took part and how they were chosen.",
+      link: { k: "none", title: "", text: "No study. From the TOK box (p. 13). Quantitative and qualitative research often use different terms for the same or similar ideas." } }
+  ]
+},
+{
+  id: "generalizability", title: "Generalizability and sampling", pages: "pp. 13–14",
+  intro: "There are at least three aspects of generalizability (Figure 1.3), each with a different name in quantitative and qualitative research.",
+  terms: [
+    { t: "Generalizability", key: 1, p: "p. 13",
+      def: "The extent to which we can generalise the results of a study beyond the study itself. Its three aspects are: generalising from the participants to larger groups of people; from the study context to other situations and settings; and from the study data to the theoretical constructs and conclusions.",
+      ex: "A study of 50 Pune college students: does it apply to all Indian teenagers, to life outside the lab, and does it really measure what it claims to?",
+      link: { k: "none", title: "", text: "No study. See Figure 1.3 and Table 1.2." } },
+    { t: "Sampling", key: 1, p: "pp. 13–14",
+      def: "The process of finding and recruiting individuals for a study. There are different sampling techniques, each with strengths and limitations, and sampling may affect the results of a study.",
+      ex: "Recruiting participants through a school notice board versus picking names at random from the school register.",
+      link: { k: "none", title: "", text: "No study. Quantitative: random, stratified, self-selected, opportunity. Qualitative: quota, purposive, theoretical, snowball, convenience (Table 1.2)." } },
+    { t: "Population validity", key: 0, p: "p. 14",
+      def: "In quantitative methods, the extent to which the results of a study can be generalised to larger groups of people. It is high if the sample is representative of the target population: it reflects all the essential characteristics of the population in miniature.",
+      ex: "A study of only boys from one elite school has low population validity for all teenagers.",
+      link: { k: "none", title: "", text: "No study. Together with ecological validity, it is known as external validity." } },
+    { t: "Sample-to-population generalizability", key: 0, p: "p. 14",
+      def: "The qualitative equivalent of population validity, also called inferential generalizability. Sampling in qualitative research is different, so representativeness does not apply; judgements are based on different principles.",
+      ex: "Asking whether insights from interviews with six refugee families can tell us about refugees more widely.",
+      link: { k: "none", title: "", text: "No study. See Unit 1.8 (p. 40)." } },
+    { t: "Ecological validity", key: 0, p: "p. 14",
+      def: "In the experiment, the extent to which results may be applied to natural real-life settings. Experiments are sometimes conducted in artificial settings, such as a laboratory, but we want to believe people will behave the same way in daily life.",
+      ex: "Remembering a word list in a quiet lab may not show how you remember things in a noisy classroom.",
+      link: { k: "none", title: "", text: "No study. Together with population validity, it is known as external validity." } },
+    { t: "Transferability", key: 0, p: "p. 14",
+      def: "The qualitative equivalent of ecological validity, also called case-to-case generalizability: the extent to which the findings of a qualitative study can be applied to a different but similar context.",
+      ex: "Findings from interviews with nurses in one Mumbai hospital may transfer to nurses in a similar Delhi hospital.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Construct validity", key: 0, p: "p. 14",
+      def: "In quantitative research (experiments, correlational studies, questionnaires), the extent to which we believe the study ‘measures’ the hypothesised theoretical construct and not something else. In qualitative research, a similar idea is called theoretical generalizability.",
+      ex: "Does counting the number of friends someone has really measure ‘popularity’?",
+      link: { k: "none", title: "", text: "No study. See Unit 1.4 for construct validity in experiments." } }
+  ]
+},
+{
+  id: "credibility", title: "Credibility and bias", pages: "pp. 14–15",
+  intro: "The results of a study do not reflect reality if there was bias in it.",
+  terms: [
+    { t: "Credibility", key: 1, p: "pp. 14–15",
+      def: "The degree to which the results of a study can be trusted to reflect reality. It is high if potential sources of bias were, to the best of our knowledge and abilities, controlled or eliminated. In the experiment this is called internal validity. In qualitative research, ‘validity’ is not used; ‘credibility’ or ‘trustworthiness’ refer to whether the conclusions reflect participants' actual experiences.",
+      ex: "A survey on cheating, answered with a teacher watching, has low credibility: students won't admit to it.",
+      link: { k: "example", title: "Textbook example (p. 14)", text: "In an interview, participants may guess the aim of the study and respond as they think the researcher expects them to, while the researcher believes their answers are true." } },
+    { t: "Bias", key: 1, p: "pp. 14–15",
+      def: "Anything that stops the results of a study from reflecting reality. Credibility is closely linked to bias. In the experiment, types of bias are threats to internal validity: selection, history, maturation, testing effect, instrumentation, regression to the mean, experimental mortality, experimenter bias and demand characteristics. In qualitative research, there is participant bias (acquiescence, social desirability, dominant respondent, sensitivity) and researcher bias (confirmation bias, leading questions bias, question order bias, sampling bias, biased reporting).",
+      ex: "A researcher who expects girls to be more anxious unintentionally rates their answers as more anxious.",
+      link: { k: "none", title: "", text: "No study. See Table 1.2, and Units 1.4–1.7 for each type of bias." } },
+    { t: "Internal validity", key: 0, p: "pp. 14–15",
+      def: "In the experiment, the idea of credibility. Internal validity is high if we believe it was the manipulation of the independent variable, and not something else, that led to the observable change in the dependent variable.",
+      ex: "If the group that got a new teaching method also had a better teacher, you can't be sure the method caused the better grades.",
+      link: { k: "none", title: "", text: "No study. See Unit 1.4 for threats to internal validity." } }
+  ]
+}
+];
+
+const G14A = [
+{
+  id: "confounding", title: "Confounding variables", pages: "pp. 16–17",
+  intro: "The experiment is the only method that allows cause-and-effect inferences. The trick is to isolate the IV so that nothing else changes when you manipulate it.",
+  terms: [
+    { t: "Cause-and-effect inferences", key: 1, p: "p. 16",
+      def: "Conclusions that a change in one variable caused a change in another. The experiment is the only method that allows them, by defining the IV and DV, manipulating the IV, and observing how the DV changes in response.",
+      ex: "Concluding that a caffeine drink caused faster reaction times, because it was the only thing that differed between two random groups.",
+      link: { k: "none", title: "", text: "No study. Correlational studies cannot make these inferences (Unit 1.2)." } },
+    { t: "Confounding variables", key: 1, p: "p. 17",
+      def: "Variables that can potentially distort the relationship between the IV and the DV. They contribute to bias, and need to be controlled, either by eliminating them or keeping them constant in all groups so they do not affect the comparison.",
+      ex: "Testing a new maths app with one class in the morning and comparing it with a class taught in the afternoon: time of day is a confounding variable.",
+      link: { k: "example", title: "Textbook example (p. 17)", text: "Studying sleep deprivation and memory, the experimental group sleeps in a supervised lab while the control group sleeps at home. Sleep environment is a confounding variable: the unfamiliar lab, not sleep loss, may have reduced memory." } }
+  ]
+},
+{
+  id: "sampling", title: "Sampling in the experiment", pages: "pp. 17–19",
+  intro: "As a nomothetic method, the experiment aims for universal laws, so the sample must represent the target population. The choice of technique depends on the aim, resources and the target population.",
+  terms: [
+    { t: "Target population and sample", key: 0, p: "p. 17",
+      def: "The target population is the group of people to whom the findings are expected to be generalised. The sample is the group of people taking part in the experiment.",
+      ex: "Target population: all Grade 11 students in India. Sample: 120 Grade 11 students from four Pune schools.",
+      link: { k: "none", title: "", text: "No study. The Activity box asks how you would make a sample representative for a study of praise and teenagers' school performance." } },
+    { t: "Representativeness", key: 0, p: "p. 17",
+      def: "The key property of a sample. A sample is representative of the target population if it reflects all its essential characteristics. It is how results from a sample can be generalised to the target population.",
+      ex: "A sample for a study on Indian teenagers that includes urban and rural students, boys and girls, in roughly the right proportions.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Random sampling", key: 1, p: "p. 18",
+      def: "The ideal approach to making the sample representative: every member of the target population has an equal chance of becoming part of the sample. With a big enough sample, it accounts for all essential characteristics, even ones never suspected to matter. It is not always possible for practical reasons.",
+      ex: "Picking 100 names from the full school roll using a random number generator.",
+      link: { k: "example", title: "Textbook example (p. 18)", text: "A pre-election telephone survey selecting participants randomly from social media profiles. Even here, the target population is really only citizens with that type of social media profile." } },
+    { t: "Stratified sampling", key: 1, p: "p. 18",
+      def: "A theory-driven technique. You decide the essential characteristics the sample must reflect, find their distribution in the target population, then recruit participants so the sample keeps the same proportions. It ensures theory-defined characteristics are fairly represented, and may be ideal when you are sure about the essential characteristics and samples are not large.",
+      ex: "If 60% of your school is girls and 40% boys, your sample of 50 has 30 girls and 20 boys.",
+      link: { k: "example", title: "Textbook example (p. 18, Table 1.3)", text: "Sampling a school by age group (primary, middle, high) and grade point average (low, average, high) in the same proportions as the school records." } },
+    { t: "Convenience (opportunity) sampling", key: 1, p: "pp. 18–19",
+      def: "Recruiting participants who are easily available. It is chosen when money and time are limited, when there is reason to believe people do not differ much on the phenomenon studied, or for a pilot study. Its limitation is a lack of representativeness.",
+      ex: "A student researcher surveying whoever is in the school library at lunchtime.",
+      link: { k: "example", title: "Textbook example (pp. 18–19)", text: "University students are very popular participants because researchers are usually professors. A study of caffeine on attention might assume the effect is common to all people." } },
+    { t: "Self-selected sampling", key: 1, p: "p. 19",
+      def: "Recruiting volunteers, for example by advertising the experiment and using those who respond. It is quick and easy, with wide coverage. Its main limitation is representativeness: volunteers may be more motivated than the general population, or may be looking for incentives such as payment.",
+      ex: "Putting up a poster: ‘Volunteers needed for a 20-minute memory study, free snacks provided’.",
+      link: { k: "example", title: "Textbook example (p. 19)", text: "Advertising the experiment in a newspaper." } }
+  ]
+},
+{
+  id: "designs", title: "Experimental designs", pages: "pp. 19–21",
+  intro: "The organisation of groups and conditions in an experiment is the experimental design. There are three basic types (Figure 1.5).",
+  terms: [
+    { t: "Independent measures design", key: 1, p: "pp. 19–20",
+      def: "A design involving random allocation of participants into groups and a comparison between them; in its simplest form, an experimental group and a control group. Random allocation means potential confounding variables cancel each other out, so with large enough groups they are likely to be equivalent, and any difference at the end must be caused by the manipulation.",
+      ex: "Randomly splitting 60 students into a group that revises with flashcards and a group that rereads notes.",
+      link: { k: "example", title: "Textbook example (pp. 19–20)", text: "Using two existing classes, one rarely praised and one often praised, would not give equivalent groups: their experiences, values and habits differ. Like comparing apples with oranges." } },
+    { t: "Random group allocation", key: 0, p: "p. 19",
+      def: "Dividing your sample into groups at random. It is different from random sampling, which is selecting the sample from the target population. You can have random group allocation in a non-random sample, and the other way round.",
+      ex: "Tossing a coin for each volunteer to decide whether they get the energy drink or water.",
+      link: { k: "none", title: "", text: "From the exam tip (p. 19): be mindful of the difference between random sampling and random group allocation." } },
+    { t: "Matched pairs design", key: 1, p: "p. 20",
+      def: "Like independent measures, but groups are formed by matching instead of fully random allocation. You measure a matching variable before the experiment, rank participants on it, then take participants in pairs from the top of the list and randomly allocate one to each group. It is preferred when equivalence on a specific variable is particularly important, or when the sample is too small for random allocation to ensure equivalent groups.",
+      ex: "Testing students' reading levels first, pairing the two best readers, the next two and so on, and splitting each pair between a new reading app and normal lessons.",
+      link: { k: "example", title: "Textbook example (p. 20, Figure 1.7)", text: "With only 20 participants in a sleep deprivation study, memory abilities are tested first and participants are matched on them." } },
+    { t: "Matching variable", key: 0, p: "p. 20",
+      def: "The variable that is controlled through matching in a matched pairs design. The resulting groups are certainly equivalent on it, and probably equivalent on everything else due to random chance.",
+      ex: "Age, IQ or baseline anxiety could each be a matching variable, depending on the study.",
+      link: { k: "example", title: "Textbook example (p. 20)", text: "Memory abilities, in a study of sleep deprivation and memory." } }
+  ]
+}
+];
+
+const RF = "Rosenthal & Fode (1963)";
+const RF_TEXT = "Rats were split into two groups at random, but the laboratory assistants (psychology students) were told one group was ‘maze-bright’ and the other ‘maze-dull’, and that the difference was genetic. Following a standardised procedure, the ‘maze-dull’ rats performed significantly worse. The result was an artefact of experimenter bias: without realising it, assistants handled the ‘maze-bright’ rats slightly longer, reducing their stress. The study would have been double-blind if the assistants had not been told the labels.";
+
+const G14B = [
+{
+  id: "repeated", title: "Repeated measures and counterbalancing", pages: "p. 21",
+  intro: "The third basic design compares conditions rather than groups of participants.",
+  terms: [
+    { t: "Repeated measures design", key: 1, p: "p. 21",
+      def: "A design used when the goal is to compare conditions rather than groups. The same group of participants is exposed to two or more conditions, and the conditions are compared. Its problem is that it is vulnerable to order effects.",
+      ex: "The same students do a reaction-time test once after sleeping well and once after a late night.",
+      link: { k: "example", title: "Textbook example (p. 21)", text: "Participants learn a list of words for 10 minutes in silence, then a different list for 10 minutes with classical music, and the two trials are compared." } },
+    { t: "Order effects", key: 0, p: "p. 21",
+      def: "In repeated measures designs, results may differ depending on which condition comes first, for reasons such as practice or fatigue. The testing effect is a special case of order effects.",
+      ex: "Students score better on the second of two puzzles simply because they have warmed up on the first.",
+      link: { k: "example", title: "Textbook example (p. 21)", text: "Silence then classical music may give different results from classical music then silence." } },
+    { t: "Counterbalancing", key: 1, p: "p. 21",
+      def: "A way to overcome order effects by using other groups of participants in which the order of conditions is reversed. Comparison is still made between conditions, not between groups: data from group 1, condition 1 is collated with group 2, condition 2, and vice versa (Figure 1.8).",
+      ex: "Half the class tries the paper test first and the tablet test second; the other half does the reverse.",
+      link: { k: "example", title: "Textbook example (p. 21)", text: "Group 1 gets “silence then music” and group 2 gets “music then silence”." } }
+  ]
+},
+{
+  id: "validity", title: "Types of validity", pages: "pp. 21–22",
+  intro: "The quality of experiments is characterised by their construct, internal and external validity (Figure 1.9).",
+  terms: [
+    { t: "Construct validity (experiment)", key: 1, p: "pp. 21–22",
+      def: "The quality of operationalisations. When results are interpreted, findings are linked back to constructs, and moving from an operationalisation to a construct is always a bit of a leap. Construct validity is high if this leap is justified and the operationalisation covers the construct sufficiently. It answers: to what extent do the operationalisations reflect the construct?",
+      ex: "Measuring ‘friendship quality’ by how many messages two people exchange: are messages really a good sign of a close friendship?",
+      link: { k: "study", title: "Klorman (1975)", text: "Anxiety was measured with a ‘fidgetometer’, a chair that registers movement. Participants waited in it, not knowing the experiment had started, on the logic that more anxious people fidget more. It is objective, but fidgeting may be a symptom of something else, and the link between anxiety and fidgeting first has to be shown." } },
+    { t: "Internal validity (experiment)", key: 1, p: "p. 22",
+      def: "The methodological quality of the experiment. It is high when confounding variables have been controlled and we are quite certain the change in the IV, not something else, caused the change in the DV. It links directly to bias: the less bias, the greater the internal validity. It corresponds to credibility.",
+      ex: "A study where two random groups are treated identically except for the IV has high internal validity.",
+      link: { k: "none", title: "", text: "No study. See threats to internal validity (Figure 1.10)." } },
+    { t: "External validity", key: 1, p: "p. 22",
+      def: "The generalizability of findings in the experiment. It has two types: population validity and ecological validity.",
+      ex: "Asking whether a lab finding about memory in Delhi university students applies to other people and to real classrooms.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Population validity (experiment)", key: 1, p: "p. 22",
+      def: "The extent to which findings can be generalised from the sample to the target population. It is high when the sample is representative and an appropriate sampling technique is used.",
+      ex: "A study using a random sample of students from across a country has higher population validity than one using a single school.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Ecological validity (experiment)", key: 1, p: "p. 22",
+      def: "The extent to which findings can be generalised from the experiment to other settings or situations. It links to the artificiality of experimental conditions. There is an inverse relationship with internal validity: controlling confounding variables makes procedures more standardised and artificial, lowering ecological validity, and the reverse.",
+      ex: "A driving study done in a simulator may not show how people actually drive on busy Pune roads.",
+      link: { k: "example", title: "Textbook example (p. 22)", text: "In memory experiments, participants often memorise long lists of trigrams. How far do such findings apply to everyday learning?" } }
+  ]
+},
+{
+  id: "threats", title: "Bias in experimental research: threats to internal validity", pages: "pp. 23–26",
+  intro: "Bias in experiments comes from confounding factors that may influence the IV–DV relationship. The list follows Campbell's (1957) classic text (Figure 1.10).",
+  terms: [
+    { t: "Selection bias", key: 1, p: "p. 23",
+      def: "A threat that occurs if groups are not equivalent at the start of the experiment: apart from the planned IV difference, they differ in some other variable, so we cannot tell whether post-experiment differences reflect the IV or this other variable. It occurs in independent measures and matched pairs designs when group allocation was not completely random.",
+      ex: "Testing a new teaching method with volunteers from the top set and comparing them with the bottom set.",
+      link: { k: "source", title: "Campbell (1957)", text: "One of the threats to internal validity in Campbell's classic text." } },
+    { t: "Maturation", key: 1, p: "p. 23",
+      def: "A bias that arises because participants go through natural developmental processes during the experiment, such as fatigue or simply growth. The counteracting strategy is a control group: the same time period and measurements, but no treatment.",
+      ex: "A year-long vocabulary programme for six-year-olds: their vocabulary would grow anyway.",
+      link: { k: "example", title: "Textbook example (p. 23)", text: "An assertiveness training programme for middle school students over several months: increased assertiveness may be due to the training or to the students simply growing up." } },
+    { t: "Testing effect", key: 1, p: "pp. 23–24",
+      def: "When the first measurement of the DV affects the second and later measurements. In repeated measures designs it is a special case of order effects, controlled by counterbalancing. Otherwise, a control group can separate it from the effect of the IV.",
+      ex: "Students score higher on a second IQ test partly because they recognise the question types.",
+      link: { k: "example", title: "Textbook example (pp. 23–24, Table 1.4)", text: "A video to reduce test anxiety in primary school children: anxiety fell from 90 to 55 in the video group and from 90 to 70 in the neutral-video control group. About 20 points is probably the testing effect; the video added about 15." } },
+    { t: "History, instrumentation and regression to the mean", key: 0, own: 1, p: "p. 24",
+      def: "Three less common threats to internal validity from Campbell's (1957) text, which the textbook does not discuss but asks you to research. History: outside events between measurements affect the results. Instrumentation: changes in the measuring instrument or observers over time. Regression to the mean: extreme scores tend to move towards the average when measured again.",
+      ex: "History: a stress study where a national exam result is announced mid-study. Regression to the mean: the students who did worst on a test usually do a little better next time anyway.",
+      link: { k: "none", title: "", text: "No study. From the Activity box (p. 24)." } },
+    { t: "Experimental mortality", key: 1, hl: 1, p: "p. 25",
+      def: "A threat to internal validity: some participants drop out during an experiment, which becomes a problem if dropouts are not random. Even if groups were equivalent at the start, they may not be at the end, because a confounding variable may now be disproportionately represented in the groups. The only real counter is designing conditions so participants do not feel the need to drop out.",
+      ex: "In a fitness study, the least fit people quit the hard training group, so the remaining group looks fitter than it would have.",
+      link: { k: "example", title: "Textbook example (p. 25)", text: "Studying emotion and ethical decisions (“Would you harm one person to save 1,000?”), with someone they know in the experimental group. More experimental participants drop out, so a confounding variable (sensitivity) becomes disproportionately represented. The study also raises ethical issues." } },
+    { t: "Demand characteristics", key: 1, p: "p. 25",
+      def: "When participants understand, or think they understand, the purpose of the experiment and change their behaviour subconsciously to fit it, behaving as they think the experimenter expects. Some try to please the experimenter by being a “good subject”; others deliberately try to spoil the hypothesis. Deception may prevent it but raises ethical issues; post-experimental questionnaires can estimate its impact. It is a larger threat in repeated measures designs.",
+      ex: "Students who realise a study is about kindness suddenly start holding doors open for the researcher.",
+      link: { k: "none", title: "", text: "No study in this section." } },
+    { t: "Experimenter bias", key: 1, p: "pp. 25–26",
+      def: "When the researcher unintentionally influences the results of the study, as in the Clever Hans case. Its existence was first rigorously supported by Rosenthal and Fode (1963).",
+      ex: "A teacher marking an experiment's essays, knowing which ones came from the ‘gifted’ group, grades them more generously.",
+      link: { k: "study", title: RF, text: RF_TEXT } },
+    { t: "Double-blind design", key: 1, p: "p. 26",
+      def: "A countermeasure against experimenter bias: information that could introduce bias is withheld both from the participants and from the people conducting the experiment.",
+      ex: "In a drug trial, neither the patients nor the nurses giving the pills know which pills are real and which are placebos.",
+      link: { k: "study", title: RF, text: "The study would have been double-blind if the assistants had not been told which rats were labelled ‘maze-bright’." } }
+  ]
+}
+];
+
+const SHAROT07 = "Sharot et al. (2007)";
+const MAG = "Maguire et al. (2000)";
+
+const G14C = [
+{
+  id: "types", title: "True experiments, quasi-experiments and non-experiments", pages: "pp. 26–28",
+  intro: "True experiments and comparison studies with non-equivalent groups are two ends of one continuum, with a grey area in between (Figures 1.11 and 1.12).",
+  terms: [
+    { t: "True experiment", key: 1, p: "pp. 26–27",
+      def: "An experiment whose key feature is equivalence of groups: they are assumed equivalent in every respect except the presence or absence of the experimental manipulation. This is achieved by random allocation of participants into groups, so we can be certain group membership is the only difference and cause–effect inferences can be made.",
+      ex: "Randomly assigning 100 students to revise with or without background music and comparing their test scores.",
+      link: { k: "none", title: "", text: "No study. See the continuum in Figure 1.11." } },
+    { t: "Non-experiment", key: 1, p: "pp. 26–28",
+      def: "A study comparing pre-existing groups, with no random allocation, so the groups differ in many ways and are not equivalent. Such studies can be thought of as correlational: group membership is coded as a variable and correlated with another variable, so no cause–effect inference is possible. A study is definitely a non-experiment when no treatment at all is applied to either group.",
+      ex: "Comparing the memory of left-handed and right-handed students.",
+      link: { k: "example", title: "Textbook example (pp. 26, 28)", text: "Comparing male and female participants, Chinese and Canadian participants, teenagers and adults, cat owners and dog owners. Being Chinese or Canadian is a characteristic from birth, not a treatment applied over a limited period." } },
+    { t: "Quasi-experiment", key: 1, p: "pp. 27–28",
+      def: "A term coined by Cook and Campbell (1979); ‘quasi’ means ‘almost’. A study in the grey area: designed as an experiment, with group allocation that was controlled but not entirely random, so it lacks some features of a true experiment. Under the softer approach, which the IB accepts, a quasi-experiment alone cannot show cause and effect, but combined with other evidence it allows cautious cause–effect inferences.",
+      ex: "Comparing exam stress in a school that introduced daily meditation with a similar school that didn't.",
+      link: { k: "study", title: `${SHAROT07}; ${MAG}`, text: "Sharot et al. compared people who were in Downtown or Midtown Manhattan during 9/11; the ‘treatment’ was where they happened to be, but Sharot did not allocate them (see Unit 2.3). Maguire et al. compared brain scans of London taxi drivers with similar non-drivers and found differences in grey matter in the hippocampus, but the groups were pre-existing." } },
+    { t: "True experiment–quasi-experiment–non-experiment continuum", key: 0, own: 1, p: "p. 28",
+      def: "The IB's softer approach pictures a continuum with three points. The boundary between true and quasi-experiments is fairly clear; the boundary between quasi- and non-experiments is not. The closer to a true experiment, the more confident we are in cause–effect inferences; the closer to a non-experiment, the more we can only say the variables are related.",
+      ex: "A school trial with random allocation sits at one end; comparing boys and girls sits at the other.",
+      link: { k: "none", title: "", text: "From the exam tip (p. 28)." } }
+  ]
+},
+{
+  id: "natural", title: "Natural, laboratory and field experiments", pages: "p. 29",
+  intro: "Natural experiments are a special type of quasi-experiment. Laboratory and field experiments differ in setting.",
+  terms: [
+    { t: "Natural experiment", key: 1, p: "p. 29",
+      def: "A special type of quasi-experiment in which the experimental manipulation occurs naturally and is not caused by the researcher, although there are reasons to believe group allocation (people who experienced the natural event versus those who did not) is fairly random. They can be categorised as quasi-experimental because the treatment was well defined and there is usually an unaffected comparison group believed to be equivalent.",
+      ex: "Comparing students' sleep before and after a city changes its school start time.",
+      link: { k: "study", title: "Charlton et al. (2000)", text: "Studied children on St Helena island when television was first introduced in the mid-1990s, measuring prosocial and antisocial behaviour four months before and five years after. Some measures of prosocial behaviour decreased. The textbook's other example is a government subsidy for families below the poverty line introduced in some states but not others." } },
+    { t: "Laboratory experiment", key: 1, p: "p. 29",
+      def: "An experiment conducted at a specially designated venue according to a standard script, in well-controlled conditions. Confounding variables are controlled as much as possible, conditions are standardised, and participants usually know they are in a study. It has higher internal validity but usually lower ecological validity, because the setting is artificial.",
+      ex: "Measuring reaction times on a computer in a quiet room at a university.",
+      link: { k: "none", title: "", text: "No study in this section." } },
+    { t: "Field experiment", key: 1, p: "p. 29",
+      def: "An experiment conducted in a real-life setting. The researcher manipulates the IV, but because participants are in their natural setting, many extraneous variables cannot be controlled. It has higher ecological validity but lower internal validity than a laboratory experiment.",
+      ex: "Dropping a wallet in a busy market, sometimes with a family photo inside and sometimes without, to see how often it is returned.",
+      link: { k: "study", title: "Piliavin, Rodin & Piliavin (1969)", text: "Researchers pretended to collapse on a subway train and observed whether other passengers helped. To manipulate the IV, some researchers carried a cane (cane condition) and others a bottle (drunk condition)." } }
+  ]
+}
+];
+
+const G15 = [
+{
+  id: "correlation", title: "What is a correlation?", pages: "pp. 31–32",
+  intro: "In correlational studies no variable is manipulated, so causation cannot be inferred. Two or more variables are measured and their relationship is quantified.",
+  terms: [
+    { t: "Correlational studies", key: 1, p: "p. 31",
+      def: "Studies that differ from experiments in that the researcher manipulates no variable, so causation cannot be inferred. Two or more variables are measured and the relationship between them is mathematically quantified. It can be shown in a scatterplot, where each dot is one person and its coordinates are their scores on the two variables.",
+      ex: "Measuring hours of phone use and hours of sleep for 200 students and checking whether they are related.",
+      link: { k: "example", title: "Textbook example (p. 31, Figure 1.13)", text: "Anxiety (self-report questionnaire) and aggressiveness (observed during breaks) in a group of students. Jessica scored 70 on anxiety and 50 on aggressiveness." } },
+    { t: "Correlation", key: 0, p: "p. 32",
+      def: "A measure of linear relationship between two variables: graphically, the straight line that best approximates the ‘cloud’ of points in a scatterplot. In a positive correlation, one variable tends to increase as the other increases; in a negative correlation, one decreases as the other increases. Correlation does not imply causation: all we know is that there is a link.",
+      ex: "Positive: the more students practise, the higher their scores. Negative: the more absences, the lower the grades.",
+      link: { k: "none", title: "", text: "No study. See Figure 1.14." } },
+    { t: "Correlation coefficient", key: 1, p: "p. 32",
+      def: "A number from −1 to +1 expressing the strength and direction of a correlation, denoted r. The steeper the line, the stronger the relationship. A perfect correlation of 1 (or −1) is a straight line at 45°; a correlation close to zero is a flat line, showing no relationship, and the scatterplot looks more like a circle or rectangle.",
+      ex: "r = 0.8 between hours of revision and test scores would be a strong positive correlation.",
+      link: { k: "none", title: "", text: "No study. See Figure 1.14." } }
+  ]
+},
+{
+  id: "significance", title: "Effect size and statistical significance", pages: "pp. 32–33",
+  intro: "When interpreting a correlation, consider both effect size and statistical significance. Scientists look for significant correlations with large effect sizes.",
+  terms: [
+    { t: "Effect size", key: 1, p: "p. 32",
+      def: "The absolute value of the correlation coefficient (the number from −1 to 1). Widely accepted guidelines based on Cohen (1988) interpret it as: less than 0.10 negligible; 0.10–0.29 small; 0.30–0.49 medium; 0.50 and larger large (Table 1.5).",
+      ex: "r = −0.62 between screen time and sleep would be a large effect size.",
+      link: { k: "source", title: "Cohen (1988)", text: "The source of the conventional guidelines for interpreting effect sizes in the social sciences." } },
+    { t: "Statistical significance", key: 1, p: "p. 33",
+      def: "The likelihood that a correlation of this size was obtained by chance: the probability that, if you replicated the study with a different sample, the correlation would turn to zero. It depends on sample size. The conventional cut-off is 5%: p < 0.05 is significant, p < 0.01 very significant, p < 0.001 highly significant, and p = n.s. non-significant (Table 1.6). A significant correlation is not necessarily large: in large samples even small correlations can be significant.",
+      ex: "r = 0.10, p < 0.05 in a survey of 5,000 people: reliably different from zero, but a small effect.",
+      link: { k: "example", title: "Activity (p. 33)", text: "Interpret r = 0.14, p = n.s.; r = 0.10, p < 0.05; r = 0.34, p < 0.01; r = 0.61, p < 0.001." } },
+    { t: "Probabilistic knowledge", key: 0, own: 1, p: "p. 33",
+      def: "A TOK idea: knowledge in psychology, like the other social sciences, is probabilistic. We only know something with a degree of certainty, and there is always a possibility it is a product of chance. Replication of studies is one way to increase the degree of certainty.",
+      ex: "A weather forecast says “80% chance of rain”: useful, but never certain.",
+      link: { k: "none", title: "", text: "No study. From the TOK box (p. 33)." } }
+  ]
+},
+{
+  id: "limits", title: "Limitations of correlational studies", pages: "pp. 34–35",
+  intro: "Correlational studies have several major limitations, and these are also the main sources of bias when interpreting findings.",
+  terms: [
+    { t: "Correlation does not imply causation", key: 0, own: 1, p: "pp. 32, 34",
+      def: "The first limitation: correlations cannot be interpreted in terms of causation. We cannot say that X influences Y, nor that Y influences X.",
+      ex: "Ice cream sales and drowning both rise together in summer, but ice cream doesn't cause drowning.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Third variable problem", key: 1, p: "pp. 34–35",
+      def: "The possibility that a third variable correlates with both X and Y and explains the correlation between them. Correlational research is more credible if researchers consider potential third variables in advance and include them in the study, to study the links between X, Y and the third variable explicitly.",
+      ex: "Students who eat breakfast get better grades, but family income may affect both.",
+      link: { k: "example", title: "Textbook example (p. 34)", text: "Cities with more spa salons tend to have more criminals. Once you consider the third variable, the size of the city, the correlation becomes meaningless." } },
+    { t: "Curvilinear relationships", key: 1, p: "pp. 34–35",
+      def: "Relationships in which variables are linked non-linearly. Correlation coefficients are linear, so they can only find the straight line that fits best, and may give a small or medium correlation for a strong curved relationship. The relationship can only be captured by looking at the graph, so researchers who suspect it should generate and study scatterplots.",
+      ex: "A little nervousness before a match helps performance, but too much makes it worse.",
+      link: { k: "source", title: "Yerkes–Dodson law (Figure 1.15)", text: "Performance increases with mental arousal (stress) only up to a point, then decreases; optimal performance occurs at average arousal." } },
+    { t: "Spurious correlations", key: 1, p: "pp. 34–35",
+      def: "When a study calculates many correlations between many variables, some statistically significant correlations may be the result of random chance. A significant correlation still has a 5% chance of being an artefact, so calculating 100 correlations and picking only the significant ones increases the chance of picking spurious ones. Results of multiple comparisons should be interpreted with caution, and effect sizes considered together with significance.",
+      ex: "Correlating 50 lifestyle habits with exam scores and finding that students who own a red bag score higher.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Sampling and generalizability in correlational studies", key: 0, own: 1, p: "p. 35",
+      def: "Sampling strategies are the same as in experiments: identify the target population, then draw a sample by random, stratified, opportunity or self-selected sampling. Generalizability depends on the representativeness of the sample, much like population validity in experiments.",
+      ex: "A correlational study of social media use and mood among students at one school can't be generalised to all teenagers.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Credibility and bias in correlational research", key: 0, own: 1, p: "p. 35",
+      def: "Bias can occur at the level of variable measurement and at the level of interpretation. Measurement biases are not specific to correlational research: if observation or questionnaires are used to measure a variable, their biases apply. Interpretation biases come from curvilinear relationships, the third variable problem and spurious correlations.",
+      ex: "If ‘stress’ is measured by a questionnaire students fill in during class, social desirability may distort the correlation.",
+      link: { k: "none", title: "", text: "No study. The Discussion box asks you to compare this with experimental research." } }
+  ]
+}
+];
+
+const G16A = [
+{
+  id: "credibility", title: "Credibility in qualitative research", pages: "pp. 36–38",
+  intro: "Credibility in qualitative research is the counterpart of internal validity: to what extent do the findings reflect reality? Figure 1.16 shows common ways to ensure it.",
+  terms: [
+    { t: "Trustworthiness", key: 1, p: "pp. 36–37",
+      def: "Another name for credibility in qualitative research, the counterpart of internal validity in the experiment. It asks: to what extent do the findings reflect reality? If a true picture of the phenomenon is presented, the study is credible.",
+      ex: "An interview study on student burnout is trustworthy if its conclusions match what the students actually experienced.",
+      link: { k: "none", title: "", text: "No study. The TOK box (p. 37) suggests replacing “true” with “beyond reasonable doubt”." } },
+    { t: "Triangulation", key: 1, p: "p. 37",
+      def: "Combining different approaches to collecting and interpreting data. Method triangulation: the same results from various methods (e.g. interviews and observations). Data triangulation: using data from a variety of sources, such as documents participants mention. Researcher triangulation: combining the observations and interpretations of different researchers. Theory triangulation: using multiple perspectives or theories to interpret the data. With reflexivity, it is one of the two most important tools for reducing bias.",
+      ex: "Studying bullying by interviewing students, observing the playground and reading incident reports.",
+      link: { k: "none", title: "", text: "No study in this section." } },
+    { t: "Establishing a rapport", key: 1, p: "p. 37",
+      def: "Ensuring participants are being honest by building a good relationship with them and making clear there are no right or wrong answers. Participants should alter their behaviour in the presence of the researcher as little as possible.",
+      ex: "Chatting informally with a student before an interview and reassuring them that their answers won't be shared with teachers.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Iterative questioning", key: 1, p: "p. 38",
+      def: "In research with sensitive data especially, participants may distort data intentionally (lying) or unintentionally, to create a certain impression. Spotting ambiguous answers and returning to the topic later with a rephrased question can give deeper insight.",
+      ex: "A student says they ‘rarely’ skip homework; later the interviewer asks what they did last week instead of homework.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Reflexivity", key: 1, p: "p. 38",
+      def: "Researchers reflecting on the possibility that their own biases interfered with the observations or interpretations, and identifying the findings most likely affected. Some subjectivity is unavoidable in qualitative research. Epistemological reflexivity concerns the strengths and limitations of the method used. Personal reflexivity concerns the researcher's personal beliefs and expectations.",
+      ex: "A researcher who grew up in a hostel notes that this may shape how they interpret students' stories of homesickness.",
+      link: { k: "example", title: "Textbook examples (p. 38)", text: "Epistemological: “these behaviours should be interpreted with caution because participants were aware they were being observed”. Personal: “since I have a history of overcoming childhood trauma, this observation could have been influenced by my beliefs and should be cross-checked by an independent interviewer”." } },
+    { t: "Credibility checks", key: 1, p: "p. 38",
+      def: "Checking the accuracy of data by asking participants to read transcripts of interviews or field notes, and confirm they accurately represent what they said, meant or did. Common in interviews, where interviewees correct inaccuracies or clarify.",
+      ex: "Emailing each interviewee their transcript and asking them to correct anything that doesn't match what they meant.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Thick descriptions", key: 1, p: "p. 38",
+      def: "Explaining not just the observed behaviour but also the context in which it occurred, in enough detail that an outsider who never saw it can understand it holistically. Also called “rich” descriptions; the terms are interchangeable. Out of context, behaviour is reported “thinly”.",
+      ex: "Not just “the student cried”, but who was there, what had just happened and what the student said afterwards.",
+      link: { k: "example", title: "Textbook example (p. 38)", text: "A stranger smiling at you: thinly reported, it is just a fact; placed in context (who, where, in what circumstances), it becomes meaningful." } }
+  ]
+},
+{
+  id: "bias", title: "Bias in qualitative research", pages: "pp. 38–40",
+  intro: "In qualitative research, the researcher is the tool through which data is collected, so some bias is inevitable and must be reflected on. Bias may come from the participant or the researcher.",
+  terms: [
+    { t: "Participant bias", key: 1, p: "pp. 38–39",
+      def: "Bias coming from the participants: acquiescence, social desirability, dominant respondent and sensitivity bias.",
+      ex: "Interviewees exaggerating how much they study because they want to look like good students.",
+      link: { k: "none", title: "", text: "No study. See Table 1.7." } },
+    { t: "Acquiescence bias", key: 1, p: "p. 39",
+      def: "A tendency to give positive answers whatever the question. Some people are acquiescent by nature; in others it may be induced by the questions or the researcher's behaviour. To avoid it, researchers should not ask leading questions, and keep questions open-ended, neutral and focused on the participant's opinions.",
+      ex: "A student agrees with every statement on a questionnaire, even contradictory ones.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Social desirability bias", key: 1, p: "p. 39",
+      def: "A participant's tendency to respond or behave in a way they think will make them liked or accepted, intentionally or not. Research into sensitive topics is especially vulnerable. Questions should be non-judgemental, suggesting any answer is acceptable, or ask about a third person (“What do your friends think about…?”).",
+      ex: "Teenagers under-reporting how much time they spend gaming when their parents might see the answers.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Dominant respondent bias", key: 1, p: "p. 39",
+      def: "In a group interview, when one participant influences the behaviour and responses of the others, ‘hijacking’ talking time or intimidating others with assertiveness or superior knowledge. Researchers should be trained to control dominant respondents and give everyone equal opportunity to speak.",
+      ex: "In a focus group on school canteen food, the class captain's strong opinions lead everyone else to agree.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Sensitivity bias", key: 1, p: "p. 39",
+      def: "A tendency to answer regular questions honestly but distort answers to questions on sensitive subjects, even giving incorrect information to hide secrets. The solution is building rapport and trust, and increasing the sensitivity of questions gradually while responding to the participant's concerns.",
+      ex: "A student answers openly about hobbies but gives vague answers when asked about family conflict.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Researcher bias", key: 1, p: "pp. 38–40",
+      def: "Bias coming from the researcher: confirmation bias, leading questions bias, question order bias, sampling bias and biased reporting.",
+      ex: "An interviewer who believes social media harms teens only asks follow-up questions when students mention negatives.",
+      link: { k: "none", title: "", text: "No study. See Table 1.7." } },
+    { t: "Confirmation bias", key: 1, p: "p. 39",
+      def: "When the researcher has a prior belief and uses the research, unintentionally, to confirm it. It may influence question wording, nuances in non-verbal behaviour, and selective attention while observing or interpreting. It is so deeply rooted in human information processing that it is largely unavoidable in qualitative research, so researchers should be trained to recognise it and take it into account. Reflexivity is the solution.",
+      ex: "A teacher convinced that a student is lazy notices every missed deadline and overlooks the work handed in on time.",
+      link: { k: "none", title: "", text: "No study. See also Unit 2.5: confirmation bias." } },
+    { t: "Leading questions bias", key: 1, p: "p. 39",
+      def: "When respondents are inclined to answer in a certain way because the wording of the question encourages it. Even in a planned interview, follow-up or clarification questions can cause distortions. Interviewers should be trained to ask open-ended, neutral questions.",
+      ex: "“Don't you think the new timetable is too stressful?” instead of “How do you find the new timetable?”",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Question order bias", key: 1, p: "pp. 39–40",
+      def: "When responses to one question influence responses to the following questions, because of the human tendency to be consistent. To minimise it, ask general questions before specific ones, positive before negative, and behaviour questions before attitude questions.",
+      ex: "After saying you love reading, you feel you should also say you visit the library often.",
+      link: { k: "example", title: "Textbook example (p. 40)", text: "If you hesitantly answer “yes” to liking sports, you are likely to give more positive answers about gym membership later." } },
+    { t: "Sampling bias", key: 1, p: "p. 40",
+      def: "When the sample is not adequate for the aims of the research. For example, choosing people who are not the ‘best fit’ for the research purposes may result from convenience sampling.",
+      ex: "Studying the experience of first-generation students by interviewing whoever is in the library.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Biased reporting", key: 1, p: "p. 40",
+      def: "When some findings are not equally represented in the research report, for example only briefly mentioning evidence that does not ‘fit’. Reflexivity, integrity and training counteract it.",
+      ex: "A report on a new homework policy quotes the five happy students at length and the three unhappy ones in a single line.",
+      link: { k: "none", title: "", text: "No study." } }
+  ]
+}
+];
+
+const G16B = [
+{
+  id: "sampling", title: "Sampling and generalizability in qualitative research", pages: "pp. 40–42",
+  intro: "Generalization is “an inference about the unobserved based on the observed” (Polit & Beck, 2010). Qualitative sampling is non-probabilistic, so representativeness does not apply in the same way.",
+  terms: [
+    { t: "Generalization", key: 0, p: "pp. 40–41",
+      def: "A broad inference from particular observations: “an inference about the unobserved based on the observed” (Polit & Beck, 2010). The main argument against generalizability in qualitative research is that samples are not statistically representative. A ‘weak’ counter-argument is that qualitative research does not aim to generalise; a stronger one is that generalization is achievable to an extent; some even argue rich qualitative data is more generalizable.",
+      ex: "After interviewing ten Grade 12 students about exam pressure, a researcher asks what this might tell us about Grade 12 students elsewhere.",
+      link: { k: "source", title: "Polit & Beck (2010)", text: "The source of the definition of generalization." } },
+    { t: "Quota sampling", key: 1, p: "p. 41",
+      def: "Deciding before the research how many people to include and what characteristics they should have, driven by the research question, then recruiting until the quotas are met. It is similar to stratified sampling: both the characteristics and sample proportions are pre-defined.",
+      ex: "Interviewing exactly five boarders and five day scholars about homesickness.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Purposive sampling", key: 1, p: "p. 41",
+      def: "Similar to quota sampling in that the main characteristics of participants are defined in advance and participants with them are recruited, but the proportions and sample size are not defined.",
+      ex: "Recruiting any students who have changed schools in the last year to study adjusting to a new school.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Theoretical sampling", key: 1, p: "p. 41",
+      def: "A special type of purposive sampling that stops when data saturation is reached: no new information comes from new participants. Whether information is ‘new’ is defined by a background theory: saturation is reached when no new evidence or counter-evidence for the theory's claims emerges. Generalization is made from the data to the theory.",
+      ex: "Interviewing exam-anxious students one by one and stopping once new interviews only repeat themes already found.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Data saturation", key: 0, p: "p. 41",
+      def: "The point at which no new information is obtained from new participants added to the sample, judged against a background theory.",
+      ex: "By the twelfth interview, students are describing exactly the same worries as the first eleven.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Snowball sampling", key: 1, p: "p. 41",
+      def: "A small number of participants are recruited and asked to invite other people they know who are also of interest to the research. It is mostly used in pilot studies, or with groups that are very difficult to reach.",
+      ex: "Interviewing one young street artist, who introduces you to three others, who each introduce more.",
+      link: { k: "example", title: "Textbook example (p. 41)", text: "Youth gang members." } },
+    { t: "Convenience sampling (qualitative)", key: 1, p: "p. 42",
+      def: "The most superficial approach: using the sample that is easily available or accessible.",
+      ex: "A student researcher interviewing their own friends because they are available after school.",
+      link: { k: "example", title: "Textbook example (p. 42)", text: "Professors researching with university students because it is time- and cost-efficient." } },
+    { t: "Sample-to-population generalization", key: 1, p: "p. 42",
+      def: "One of Firestone's (1993) three types of generalizability. The researcher identifies the target population and selects a representative sample, ideally by random sampling. In experiments this is population validity. Because qualitative samples are non-probabilistic, this type is difficult in qualitative research.",
+      ex: "A national survey sampling students from every region to describe all Indian students.",
+      link: { k: "source", title: "Firestone (1993)", text: "Three types of generalizability that give a framework for comparing quantitative and qualitative studies." } },
+    { t: "Theoretical generalization", key: 1, p: "p. 42",
+      def: "Generalization from particular observations to a broader theory. In quantitative research it takes the form of construct validity. In qualitative research it is achieved through rigorous analysis and interpretation: we can generalise to a wider theory if data saturation was achieved, thick descriptions provided, and analysis was in-depth and free of biases. Theory plays a much greater role in qualitative research.",
+      ex: "In-depth interviews with a few refugees support a general theory of how people adapt to a new culture.",
+      link: { k: "source", title: "Firestone (1993)", text: "The second of the three types of generalizability." } },
+    { t: "Case-to-case generalization (transferability)", key: 1, p: "p. 42",
+      def: "Generalization to a different group of people or a different setting. In qualitative research it is the responsibility of both the researcher, who must give thick descriptions so the reader has enough detail about the context, and the reader, who decides whether the context is similar to a new situation (Polit & Beck, 2010). A rough, distant quantitative equivalent is ecological validity.",
+      ex: "A teacher reads a detailed study of a rural school in Kenya and judges whether its findings fit her own rural school.",
+      link: { k: "source", title: "Firestone (1993); Polit & Beck (2010)", text: "The third of the three types of generalizability. See Table 1.2." } }
+  ]
+},
+{
+  id: "observation", title: "Qualitative methods: observation", pages: "pp. 42–43",
+  intro: "Observation is ‘experiential’: all data is the product of the researcher's selective attention and interpretations, which makes reflexivity especially important.",
+  terms: [
+    { t: "Observation", key: 0, p: "p. 42",
+      def: "A qualitative method chosen when the focus is how people act and interact in a natural setting, when meaningful knowledge cannot be generated without observing (for example because it cannot be put into words), and when the researcher wants to be deeply immersed in the phenomenon, gaining almost first-hand experience. The type of observation chosen has implications for credibility, reflexivity, generalizability and ethics.",
+      ex: "Watching how students actually behave in the canteen queue rather than asking them.",
+      link: { k: "example", title: "Textbook example (p. 42)", text: "To understand classmates' behaviour during a school fire drill, it would be more meaningful to observe an actual drill than to interview them." } },
+    { t: "Laboratory observation", key: 1, p: "p. 43",
+      def: "Observation carried out in a setting arranged for the purposes of the study, as opposed to naturalistic observation.",
+      ex: "Watching toddlers play with a set of toys in a university playroom through a one-way mirror.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Naturalistic observation", key: 1, p: "p. 43",
+      def: "Observation carried out in naturally occurring settings, not arranged for the study. Sometimes it is the only choice. A drawback is that it may be time-consuming, because the behaviour of interest may occur only at certain times or infrequently.",
+      ex: "Observing how children share equipment in an ordinary school playground.",
+      link: { k: "example", title: "Textbook example (p. 43)", text: "Studying inter-group discrimination and violence: it would be unethical to encourage violence in a research setting." } },
+    { t: "Overt observation", key: 1, p: "p. 43",
+      def: "Observation in which participants are aware they are being observed. Its ethical strength is that participants give informed consent; its limitation is bias related to participant expectations.",
+      ex: "A researcher sits openly at the back of a class, and the students know why.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Covert observation", key: 1, p: "p. 43",
+      def: "Observation in which the researcher does not inform group members about the reasons for their presence. Its strengths are access to groups that would not normally agree to research (such as socially isolated or violent groups) and avoiding participant bias, because people behave naturally. Its ethical weakness is no consent, which can be addressed by debriefing and asking for consent before the data is used.",
+      ex: "A researcher joins an online gaming community as an ordinary player to study how newcomers are treated.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Participant observation", key: 1, p: "p. 43",
+      def: "Observation in which the observer becomes part of the observed group. It gives first-hand experience and valuable insights, but the observer may lose objectivity by becoming involved and beginning to identify with the group.",
+      ex: "A researcher joins a school cricket team for a season to study team spirit.",
+      link: { k: "example", title: "Textbook example (p. 43)", text: "Anthropologists living among members of an indigenous society to study their culture “from the inside”." } },
+    { t: "Non-participant observation", key: 1, p: "p. 43",
+      def: "Observation in which the observer does not become part of the observed group.",
+      ex: "Watching a debate club's meetings from the side without taking part.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Structured observation", key: 1, p: "p. 43",
+      def: "Observation in which information is recorded systematically and in a standardised way, for example with a checklist of behaviours the observer notes in pre-defined time intervals.",
+      ex: "Ticking a box every 30 seconds for whether a child is on-task or off-task.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Unstructured observation", key: 1, p: "p. 43",
+      def: "Observation with no pre-defined structure: observers register whatever behaviours they find noteworthy.",
+      ex: "Writing free notes on everything interesting that happens during a school assembly.",
+      link: { k: "none", title: "", text: "No study." } }
+  ]
+},
+{
+  id: "interviews", title: "Interviews, focus groups and case studies", pages: "pp. 44–45",
+  intro: "Interviews may be the only way to get insight into subjective experiences. The interviewer is the main research instrument, which is why interviewers receive intensive training.",
+  terms: [
+    { t: "Interview", key: 0, p: "p. 44",
+      def: "One of the most popular qualitative methods. Attitudes, values and patterns of interpretation are unobservable, so the most straightforward way to study them is through participants' verbal reports. Interviews are very personal and often touch on sensitive topics. Data is an audio or video recording converted to a transcript, which is coded and analysed. There are three types, depending on how fixed the questions and their order are.",
+      ex: "A 45-minute one-to-one conversation with a student about how they cope with social media pressure.",
+      link: { k: "example", title: "Textbook examples (p. 44)", text: "Coping with a terminal illness, experiencing phobias, or daily routines related to internet addiction." } },
+    { t: "Structured interview", key: 1, p: "p. 44",
+      def: "An interview with a fixed list of questions asked in a set order. It is most useful when several interviewers are involved and must all conduct the sessions in a similar way.",
+      ex: "Five student researchers each ask 20 classmates the same ten questions in the same order.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Semi-structured interview", key: 1, p: "p. 44",
+      def: "An interview that does not fix the order or exact set of questions. It is like a checklist: certain questions must be asked, but the researcher can ask follow-up questions and change the order to fit the natural flow of conversation.",
+      ex: "An interviewer covers five topics about school life but follows up whenever a student mentions something interesting.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Unstructured interview", key: 1, p: "p. 44",
+      def: "An interview that is mostly participant-driven: each next question depends on the previous answer, while the researcher keeps the overall purpose in mind. Two interviewees may get very different questions.",
+      ex: "Starting with “Tell me about your first week in India” and letting the conversation go where the student takes it.",
+      link: { k: "none", title: "", text: "No study. The Discussion box asks which type you would use with ten teenagers recruited by snowball sampling to study why they join criminal groups." } },
+    { t: "Focus group", key: 1, p: "pp. 44–45",
+      def: "A special type of semi-structured interview conducted with a group of 6–10 people at once. Participants are encouraged to interact, and the interviewer acts as a facilitator who uses group dynamics to keep the discussion on topic. Advantages: quick, more natural and comfortable (less participant bias), easier for sensitive questions, and multiple perspectives give a more holistic understanding. Limitations: a dominant participant may distort responses, anonymity and confidentiality are harder to keep, and sampling and transcription are demanding.",
+      ex: "Eight Grade 10 students discussing together what they think of the school's new phone policy.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Case study", key: 1, p: "p. 45",
+      def: "An in-depth investigation of an individual or a group. It can combine several methods (observations, interviews and so on). It is treated as a separate method because the case is unique in some way; sampling is not an issue; generalization is a by-product (case-to-case and theoretical); and the case is studied thoroughly, often longitudinally. Case studies let us study phenomena that could not be studied otherwise, and ‘boundary’ cases can contradict established theories and help develop new ones.",
+      ex: "Following one child prodigy over five years to understand how their musical talent develops.",
+      link: { k: "example", title: "Textbook examples (p. 45)", text: "Studying the personality of a patient who has lost a brain hemisphere through surgery; testing universal theories of memory with individuals who have unusual memory abilities." } }
+  ]
+}
+];
+
+const G17 = [
+{
+  id: "what", title: "What are surveys and questionnaires?", pages: "pp. 46–48",
+  intro: "To avoid confusion, the IB uses the two terms interchangeably for exam purposes. The textbook suggests one way to tell them apart.",
+  terms: [
+    { t: "Questionnaire", key: 1, p: "pp. 46–48",
+      def: "A data collection tool that measures an underlying construct that is not explicitly present in the questions. Items are written as observable indicators of the construct, often grouped into scales and scored on a Likert scale; some items are scored in reverse. Each response depends on the person's true score (the true level of the trait) and random error, so several items are used for one construct: random error cancels out and reliability increases (Figure 1.17).",
+      ex: "A 12-item exam anxiety questionnaire where you rate statements like “My hands shake before a test” from 1 to 5, and the total is your anxiety score.",
+      link: { k: "example", title: "Textbook example (pp. 46–47)", text: "A friendliness questionnaire with three scales of four items each: friendly attitude, interpersonal trust and readiness to help. “There are a few people I know that I cannot stand” is scored in reverse." } },
+    { t: "Survey", key: 1, p: "pp. 46, 50–51",
+      def: "A data collection tool, like a questionnaire, based on participants' own responses, but with no distinction between constructs and operationalization: responses are taken at face value. Each question is a measure in its own right; there is no scale and no total score per group of items.",
+      ex: "Asking students which subjects they take, how far they travel to school and how many hours they sleep.",
+      link: { k: "example", title: "Textbook example (p. 51)", text: "A survey on social media use: hours per day, platforms used most often, and how often you post your own content." } },
+    { t: "Likert scale", key: 0, p: "p. 47",
+      def: "A response scale for recording agreement with a statement, for example from 5 = absolutely agree to 1 = absolutely disagree, with 3 = neither agree nor disagree.",
+      ex: "“I enjoy group projects”: 1 strongly disagree, 2 disagree, 3 neutral, 4 agree, 5 strongly agree.",
+      link: { k: "none", title: "", text: "No study. The Activity box (p. 53) lists other formats: forced-choice, multiple response, most–least, dichotomous (yes–no), ranking and sentence completion." } },
+    { t: "Random error", key: 0, p: "p. 48",
+      def: "The many unpredictable factors, besides a person's true score, that influence a response to a single question. Basing measurement on one item would be unreliable; using multiple items cancels random error out.",
+      ex: "You answer “I enjoy meeting new people” lower than usual simply because you are tired that day.",
+      link: { k: "example", title: "Textbook example (p. 48)", text: "“On weekends I try to go out and meet new people” may be answered low by a friendly person who works weekends or is tired by the end of the week." } },
+    { t: "Class practicals", key: 0, hl: 1, p: "p. 48",
+      def: "Opportunities throughout the course to conduct your own small-scale research investigation with different methods. Paper 2 Section A is based on class practicals, and its exam questions require references to your class practicals, such as describing the study and explaining its aim. The IB recommends one practical per context (Table 1.8).",
+      ex: "Running a small experiment with five classmates to test whether music affects memory for word lists.",
+      link: { k: "example", title: "Exam tip (p. 48, Table 1.8)", text: "Health and well-being: interview (one participant, or 3–8 in a focus group). Human development: observation (one participant). Human relationships: survey/questionnaire (10 participants). Learning and cognition: experiment (five participants)." } }
+  ]
+},
+{
+  id: "psychometrics", title: "Psychometrics", pages: "pp. 49–50",
+  intro: "Applying psychometrics is beyond the IB requirements, but you should understand that there are measures for estimating the validity and reliability of a questionnaire (Figure 1.18).",
+  terms: [
+    { t: "Psychometrics", key: 1, p: "p. 49",
+      def: "A special discipline that includes mathematical techniques used to evaluate the validity and reliability of a questionnaire.",
+      ex: "Before a personality test is published, psychologists check that it gives consistent results and really measures personality.",
+      link: { k: "none", title: "", text: "No study. From the exam tip (p. 50): in your class practical, focus on high-quality questions and interpreting results, not on numerical estimates." } },
+    { t: "Reliability of a questionnaire", key: 1, p: "p. 49",
+      def: "A questionnaire is reliable if measurement is consistent, for example if completing it on several occasions gives the same results. It is estimated by internal consistency and test–retest reliability.",
+      ex: "A reliable stress questionnaire gives you a similar score on Monday and Thursday of an ordinary week.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Internal consistency (Cronbach's alpha)", key: 0, p: "p. 49",
+      def: "One of the most basic reliability characteristics: how strongly the items in a scale correlate with each other. The most widely used measure is Cronbach's alpha, which depends on the average correlation between items and the number of items. An alpha of 0.7 is typically the acceptable cut-off, and 0.9 is very high.",
+      ex: "If students who agree with “I worry before tests” also agree with “My mind goes blank in exams”, the scale is internally consistent.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Test–retest reliability", key: 0, p: "p. 49",
+      def: "The correlation between results of the same questionnaire taken by the same sample on two occasions, typically six months apart, since stable traits are unlikely to change in that time. Differences may come from the trait changing or from the scale being unreliable.",
+      ex: "Giving the same personality test to a class in January and July and checking the scores match.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Validity of a questionnaire", key: 1, p: "pp. 49–50",
+      def: "A questionnaire is valid if it measures what it is supposed to measure, and not something else. It is estimated by structure validity, convergent validity, divergent validity and predictive validity.",
+      ex: "A ‘study habits’ questionnaire that actually reflects how organised students are at home is not valid for study habits.",
+      link: { k: "none", title: "", text: "No study. See Figure 1.18." } },
+    { t: "Structure validity", key: 0, p: "p. 49",
+      def: "If the underlying traits exist, items within one scale should be strongly or moderately interrelated, while items from different scales should not be correlated. It is important in questionnaires with several scales and is estimated with a statistical method called factor analysis.",
+      ex: "In a friendliness questionnaire, the ‘trust’ items should correlate with each other more than with the ‘readiness to help’ items.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Convergent and divergent validity", key: 0, p: "pp. 49–50",
+      def: "Convergent validity: the questionnaire correlates with other measures it is theoretically related to. Divergent validity: it does not correlate with measures it is not supposed to be related to.",
+      ex: "A new exam stress scale should correlate with heart rate before exams, but not with height.",
+      link: { k: "example", title: "Textbook example (p. 50)", text: "A measure of intelligence should correlate with academic achievement and intellectual curiosity, but not as much with agreeableness and friendliness." } },
+    { t: "Predictive validity", key: 0, p: "p. 50",
+      def: "The extent to which a questionnaire's results predict some objectively registered parameter recorded in the future.",
+      ex: "A questionnaire on study habits in Grade 11 should predict final IB grades in Grade 12.",
+      link: { k: "example", title: "Textbook example (p. 50)", text: "A questionnaire on students' inclination to cheat should correlate with the number of academic dishonesty incidents recorded for each student in the next two years." } }
+  ]
+},
+{
+  id: "biases", title: "Biases and good items", pages: "pp. 51–53",
+  intro: "Surveys and questionnaires rely on self-report, probably their major weakness: answers do not always reflect reality, especially on sensitive topics.",
+  terms: [
+    { t: "Quantitative descriptive study (survey as a method)", key: 1, p: "p. 51",
+      def: "When a survey or questionnaire is used as a research method in its own right, rather than as a data collection tool inside another method. Unlike experimental and correlational studies, no variables are correlated: it describes what percentage of participants gave each answer. The IB Guide lists surveys/questionnaires as a separate research method.",
+      ex: "Reporting that 64% of surveyed Grade 9 students use social media for more than three hours a day.",
+      link: { k: "none", title: "", text: "From the exam tip (p. 51). See also Unit 1.2." } },
+    { t: "Social desirability bias (surveys)", key: 1, p: "p. 51",
+      def: "The tendency of respondents to answer in a way they think is socially acceptable rather than honestly. It is a particular problem with controversial topics, such as excessive social media use. Norms of what is acceptable differ between social groups, so it affects groups to different extents and compromises comparisons between them. It can be reduced with a forced-choice format, neutral questions, asking a close person instead, or a hidden social desirability scale.",
+      ex: "Students reporting that they read for pleasure every day because it sounds good.",
+      link: { k: "none", title: "", text: "No study. The Activity box (p. 52) asks you to research forced-choice formats and hidden social desirability scales." } },
+    { t: "Acquiescence bias (surveys)", key: 1, p: "p. 52",
+      def: "A participant's tendency to agree with all statements (“yes-saying”), because endorsement is our default response in social situations. Its effects can be minimised in a questionnaire, but not prevented, by balancing directly scored and inversely scored items. This is not possible in a survey, where each item is a measure in its own right.",
+      ex: "Agreeing with both “I love working in groups” and “I prefer working alone”.",
+      link: { k: "example", title: "Textbook example (p. 52)", text: "For self-control: “I keep calm in most situations no matter how stressful” is directly scored; “I may lose control easily when something goes wrong” is inversely scored." } },
+    { t: "Extreme responding", key: 1, p: "p. 52",
+      def: "A bias that causes participants to select only the most extreme choices, such as “absolutely agree” and “absolutely disagree”. Its opposite, choosing only neutral options, also exists. It is especially harmful in cross-cultural research, because people in some cultures give extreme responses more than others. There is no foolproof counter, except telling participants there are no right or wrong answers, asking them to use the whole scale, and considering research on cultural response styles.",
+      ex: "A respondent who marks either 1 or 5 on every single item of a 20-item scale.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Discriminative items", key: 0, hl: 1, p: "p. 53",
+      def: "Statements formulated so that people with different traits, opinions or beliefs will be likely to give different answers. They discriminate between people with a high true score and people with a low true score on the trait.",
+      ex: "“I like holidays” doesn't discriminate (nearly everyone agrees); “I prefer staying home over going to parties” does.",
+      link: { k: "none", title: "", text: "No study. One of the rules for constructing good items." } },
+    { t: "Rules for constructing good items", key: 0, hl: 1, own: 1, p: "p. 53",
+      def: "Basic rules that help avoid response biases: make items discriminative; make them as unambiguous as possible and refer to objective behaviour where applicable; make sure each item measures one aspect of one construct (avoid complex sentences with conjunctions); and use clear, short language accessible to all groups and educational levels.",
+      ex: "Instead of “I often feel stressed and tired about school”, ask two items: “Last week I slept less than six hours on a school night” and “Last week I felt unable to finish my homework”.",
+      link: { k: "example", title: "Textbook examples (p. 53)", text: "“I am often anxious about things” is vague; better is “Last time I had to make a speech in public my palms were sweaty”. “I feel insulted and abandoned when I am excluded from my circle of friends” measures two feelings in one item." } }
+  ]
+}
+];
+
+const ALBERT = "Watson & Rayner (1920): Little Albert";
+const BURT = "Cyril Burt (twin studies of IQ)";
+const MERZ = "Merzenich et al. (1984)";
+const MERZ_TEXT = "Eight adult owl monkeys took part in an experiment with a repeated measures design. Electrodes were attached to the part of the cortex responsible for sensations from the hand, different fingers were stimulated, and researchers noted which electrodes responded. Then one or more fingers were amputated, and the cortex was remapped 62 days later. Before amputation there were five distinct areas, one per digit, with adjacent fingers in adjacent areas. Afterwards, the unused area was taken over by adjacent intact fingers: if digit 3 was amputated, the areas for digits 2 and 4 spread into its former territory (Figure 1.22). The sensory cortex of adult owl monkeys can adapt to injury by cortical remapping.";
+
+const G18 = [
+{
+  id: "overview", title: "Overview", pages: "p. 54",
+  intro: "Ethics is integral to psychological research because it is research with living beings. It is one thing that distinguishes the human sciences from the natural sciences.",
+  terms: [
+    { t: "Codes of ethics", key: 0, p: "p. 54",
+      def: "Codes that regulate the activities of psychologists around the world, setting out the ethical principles and procedures for counselling, testing and research. A psychologist who breaches the code may lose their professional licence. International and national associations have developed codes with a lot of overlap, because ethical considerations in psychology are almost universal. IB Psychology focuses on research ethics, in two groups: conducting a study and reporting results.",
+      ex: "A university psychology department refuses to let a student run a study until it meets the national code of ethics.",
+      link: { k: "source", title: "APA and BPS", text: "The Activity box asks you to compare the American Psychological Association (APA) Code of Ethics with the British Psychological Society (BPS) Code of Human Research Ethics." } }
+  ]
+},
+{
+  id: "conducting", title: "Ethical considerations in conducting a study", pages: "pp. 55–56",
+  intro: "The main ethical considerations when conducting a study. The Activity box offers an acrostic: can (consent) do (debriefing) cannot (confidentiality) do (deception) with (withdrawal) participants (protection from harm).",
+  terms: [
+    { t: "Informed consent", key: 1, p: "p. 55",
+      def: "Participation must be voluntary, and participants must fully understand the nature of their involvement, including the aims of the study, the tasks, and how the data will be used. Researchers should give as much information as possible, as clearly as possible. If the participant is a minor, consent should be obtained from parents or legal guardians.",
+      ex: "Before a sleep study, Grade 11 students and their parents sign a form explaining what the study involves and how their data will be stored.",
+      link: { k: "study", title: ALBERT, text: "A nine-month-old infant was conditioned to fear a white rat; the Activity box asks how you would conduct the study more ethically." } },
+    { t: "Protection from harm", key: 1, p: "p. 55",
+      def: "At all times during the study, participants must be protected from physical and mental harm, including possible negative long-term consequences of taking part.",
+      ex: "A study on exam stress ends with a calming activity and gives students a counsellor's contact details.",
+      link: { k: "study", title: ALBERT, text: "Albert's fear generalised to a rabbit, a furry dog and a Santa Claus mask. He left the hospital shortly after, and Watson never had the chance to carry out desensitisation." } },
+    { t: "Anonymity and confidentiality", key: 1, p: "p. 55",
+      def: "Often used interchangeably, but different. Participation is confidential if someone (such as the researcher) can connect results to a participant's identity, but the agreement prevents them from sharing the data. It is anonymous if no one can trace the results back to a participant, because no personal details were provided.",
+      ex: "Confidential: the researcher knows which interview is yours but promises not to tell. Anonymous: an online survey that never asks your name.",
+      link: { k: "example", title: "Textbook example (p. 55)", text: "Filling out an online survey without providing your name is anonymous." } },
+    { t: "Withdrawal from participation", key: 1, p: "p. 55",
+      def: "It must be made explicitly clear to participants that participation is voluntary and they are free to withdraw at any time. Researchers must not prevent them or try to convince them to stay.",
+      ex: "Halfway through a long questionnaire, a student decides to stop and simply leaves, with no pressure to continue.",
+      link: { k: "none", title: "", text: "No study in this section." } },
+    { t: "Deception", key: 1, p: "p. 55",
+      def: "Concealing the true aims of a study, because revealing them would change participants' behaviour (for example through social desirability). A degree of deception is often needed, but it must be kept to the necessary minimum.",
+      ex: "Telling participants a study is about ‘visual attention’ when it is really about whether they conform to a group's wrong answers.",
+      link: { k: "none", title: "", text: "No study in this section. See also demand characteristics (Unit 1.4)." } },
+    { t: "Debriefing", key: 1, p: "p. 55",
+      def: "After the study, participants must be fully informed about its nature, true aims, and how their data will be used and stored. They must be given a chance to review their results and withdraw their data. Any deception must be revealed, and participants protected from long-term harm such as recurring uncomfortable thoughts; sometimes psychological help must be offered to monitor their state for some time after the study.",
+      ex: "After a study that made participants feel they had failed a test, the researcher explains the test was rigged and everyone actually did fine.",
+      link: { k: "example", title: "Textbook example (p. 55)", text: "Monitoring participants' psychological state after sleep deprivation studies." } },
+    { t: "Cost–benefit analysis", key: 0, p: "p. 55",
+      def: "Ethical decisions before a study are often not easy, so the costs to participants are weighed against the potential benefits of the research. Studies of obedience, conformity, compliance, violence and prejudice can rarely be designed to be harmless, so the question is whether some standards can be relaxed for a particular study.",
+      ex: "A study that briefly embarrasses participants may be justified if it could reduce bullying in schools.",
+      link: { k: "none", title: "", text: "No study in this section." } },
+    { t: "Ethics committees", key: 0, p: "p. 56",
+      def: "Committees of professional bodies that resolve ambiguous issues and approve research proposals. Proposals with full aims, procedures and anticipated results are submitted and reviewed. Potentially useful but ethically ambiguous studies may get the ‘green light’, with extra care to minimise harm and long-term follow-up. Failure to cooperate with an ethics committee is itself a violation of ethics.",
+      ex: "A school's IA proposals are checked by the psychology teacher before any student collects data.",
+      link: { k: "study", title: ALBERT, text: "The highlighted Activity questions ask what you would ask Watson and Rayner if you sat on the ethics committee reviewing their proposal, and how you would conduct the study more ethically." } }
+  ]
+},
+{
+  id: "reporting", title: "Ethical considerations in reporting results", pages: "pp. 56–57",
+  intro: "Ethical considerations when publishing research results.",
+  terms: [
+    { t: "Anonymity (in reporting)", key: 1, p: "p. 56",
+      def: "The identity of participants must be protected, with no way to identify them from published results. This is especially sensitive in case studies of unique individuals.",
+      ex: "A published case study refers to a patient only as ‘Patient R, a 40-year-old teacher’.",
+      link: { k: "example", title: "Textbook examples (p. 56)", text: "A feral child, or a person with an unusual brain damage." } },
+    { t: "Data fabrication", key: 1, p: "pp. 56–57",
+      def: "Publication must be true to what was actually obtained in the study and presented in an unbiased way. If an error is found in published results, measures should be taken to correct it. Data sets that are not transparent and raise credibility questions are an ethical concern even if not intentionally falsified, especially when findings inform social policies.",
+      ex: "A researcher who ‘adjusts’ a few scores so the results look significant is fabricating data.",
+      link: { k: "study", title: BURT, text: "Burt found IQ scores of identical twins reared apart were much more similar than non-identical twins reared together, and concluded intelligence is largely inherited; this shaped school selection policies. After his death in 1971 the BPS found him guilty of fabricating data. Suspicious details: an identical correlation (0.771) in two studies; factors like mental illness being suspiciously unimportant; 42 and 53 pairs of twins reared apart, when other studies had fewer than 20; and two collaborators who could not be traced and may never have existed." } },
+    { t: "Sharing research data for verification", key: 1, p: "pp. 56–57",
+      def: "Researchers must store primary data securely. Good science requires transparency for replication: procedures should be described in enough detail for an independent researcher to replicate them, and it should be possible to cross-check the analysis and conclusions from the same data set. Requests to share raw data should be satisfied, provided both parties use it ethically, responsibly and for agreed purposes.",
+      ex: "A researcher sends her anonymised data set to another university so they can check her statistics.",
+      link: { k: "none", title: "", text: "No study." } },
+    { t: "Social implications of reporting scientific results", key: 1, p: "p. 57",
+      def: "Researchers must be mindful of how conclusions are worded and their possible effects on the scientific community and society, especially in popular publications read by non-scientists. Blunt conclusions like “intelligence is inherited” do not reflect the full complexity but may be taken at face value, become popular, resist change, and affect public policies, for example in education.",
+      ex: "A news headline “Boys are better at maths, says study” could discourage girls from choosing maths.",
+      link: { k: "study", title: BURT, text: "The belief that intelligence is fixed and hereditary led to standardised intelligence testing of school children and allocating them to schools based on the results." } }
+  ]
+}
+];
+
+const G19 = [
+{
+  id: "model", title: "What is an animal model?", pages: "pp. 58–60",
+  intro: "The most popular species in psychological research are rats, mice, pigeons, cats, rabbits, hamsters, dogs, chimpanzees and baboons. Rats and mice are estimated to make up over 99% of animals used.",
+  terms: [
+    { t: "Animal model", key: 1, hl: 1, p: "p. 58",
+      def: "A concept that refers to using animal research to test a certain cause–effect hypothesis about a certain human behaviour. The term is often used loosely (e.g. “mouse models”), but to fully identify an animal model, state: what animal is used, what behaviour is modelled, and what causal factor is investigated (or what hypothesis is tested).",
+      ex: "Using zebrafish to test whether a chemical in plastics affects learning, to understand a possible risk for children.",
+      link: { k: "study", title: MERZ, text: MERZ_TEXT } },
+    { t: "Examples of animal models", key: 0, p: "p. 59",
+      def: "A “mouse stress model of depression” means using mice to investigate the idea that exposure to stress increases the risk of developing depression in humans. A “rhesus monkey separation model of cognitive delay” means using rhesus monkeys to investigate whether separation from attachment figures causes delays in cognitive development, and generalising this to humans.",
+      ex: "A “rat model of addiction”: using rats to test whether easy access to sugar increases cravings.",
+      link: { k: "example", title: "SAQ box (p. 59)", text: "You can use any animal study in the book to support your answer, for example Merzenich et al. (1984)." } },
+    { t: "Assumption of similarity", key: 0, hl: 1, p: "pp. 59, 61",
+      def: "The purpose of animal research is usually to understand human behaviour more deeply. This rests on the assumption that the structure and chemistry of the brain are, in some cases, very similar in humans and animals. The assumption cannot be said to be fully justified at all times.",
+      ex: "Testing a sleeping pill on mice assumes mouse sleep is regulated by brain chemistry similar enough to ours.",
+      link: { k: "source", title: "MacLean (1990): the triune brain", text: "A popular theory dividing the human brain into the reptilian complex, the paleomammalian complex (limbic system) and the neocortex. The deeper structures are found in animals too: the further down you go in the brain, the further back you see in evolution (Figure 1.23)." } },
+    { t: "Cortical remapping", key: 0, p: "pp. 59–60",
+      def: "Reorganisation of the cortex after injury, so that an area that lost its input is taken over by neighbouring areas. It is an example of neuroplasticity: the ability of the brain to reshape itself in response to environmental conditions. A direct human experiment would be unethical, so human research is limited to case studies of people with injuries, which cannot show cause and effect; animal models help test such hypotheses.",
+      ex: "After losing sight, a person's brain areas for touch may take over parts of the visual cortex, helping them read Braille.",
+      link: { k: "study", title: MERZ, text: "After digit 3 was amputated, the cortical areas for digits 2 and 4 spread into its former area." } }
+  ]
+},
+{
+  id: "pros", title: "Advantages and disadvantages of animal research", pages: "pp. 61–62",
+  intro: "The value of animal models links directly to whether animal research can give insight into human behaviour.",
+  terms: [
+    { t: "Advantages of animal research", key: 0, own: 1, p: "p. 61",
+      def: "Humans and animals are similar in brain structure and genetics; animal models have produced useful models of human behaviour and life-saving treatments; animals' short lives let researchers study the full lifespan and several generations, which helps genetic research; studies can be highly controlled, giving higher internal validity; and animals are relatively cheap, accessible and easy to manage.",
+      ex: "Studying how a diet affects ageing across three generations of mice in six years.",
+      link: { k: "example", title: "Textbook examples (p. 61)", text: "Insulin was discovered in an experiment in which dogs had their pancreas removed. The ‘knockout’ technique switches off one gene to show its function. Laboratory mice live two to three years." } },
+    { t: "Disadvantages of animal research", key: 0, own: 1, p: "p. 62",
+      def: "Animals and humans are never exactly the same, and we cannot know the extent of the difference, so successful animal findings still need replicating with humans. Animals in strictly controlled labs may be stressed, so their reactions may not match their natural behaviour, an issue of ecological validity. And they are essentially different: results can fail, or even reverse, from animals to humans.",
+      ex: "A drug that improved memory in rats has no effect when trialled in people.",
+      link: { k: "source", title: "Bailey (2008)", text: "Over 85 HIV vaccines worked well in primates but all failed in humans. Conversely, aspirin proved dangerous for animals but is one of the most widely used human medications." } }
+  ]
+},
+{
+  id: "ethics", title: "Ethical considerations in animal research", pages: "pp. 62–63",
+  intro: "Ethical considerations in animal research are regulated by professional bodies. Most revolve around justified research choices, monitoring pain, and approval from independent review teams.",
+  terms: [
+    { t: "APA guidelines for animal research", key: 0, p: "p. 62",
+      def: "The American Psychological Association (2012) regulates every step of an animal study. Justified choices: a clear scientific purpose that increases knowledge or benefits humans or animals, the best species for the purpose, and the minimum number of animals. Inflicting pain: assume what hurts humans hurts animals; know species-specific normal behaviour to spot stress; minimise discomfort; test painful stimuli on yourself first where reasonable; euthanise animals in unnecessary distress or chronic pain; never release lab-reared animals into the wild. Obtaining approval: all proposals go to the ethics committee before the study.",
+      ex: "A researcher must show that only 20 rats, not 50, are needed to answer the research question.",
+      link: { k: "source", title: "American Psychological Association (2012)", text: "The source of the guidelines summarised in the textbook." } },
+    { t: "Three Rs", key: 0, p: "p. 63",
+      def: "The basis of the British Psychological Society's (2012) policy on animals in psychology. Replacement: use animals only when no alternative exists. Reduction: use the minimal necessary number of animals. Refinement: ensure procedures cause minimal necessary distress.",
+      ex: "Replacing an animal test with a computer simulation wherever one exists.",
+      link: { k: "study", title: MERZ, text: "A very invasive manipulation with an irreversible effect (amputation) and electrodes inserted into the brain. Such proposals must be carefully scrutinised and only approved if potential gains outweigh the costs; animals must be anaesthetised and cared for for the rest of their lives." } },
+    { t: "The trolley-style argument for animal research", key: 0, own: 1, p: "p. 63",
+      def: "A TOK thought experiment used to justify animal experiments: a driverless van with 500 mice rolls towards a cliff, and a stroller with a baby is in its way. Pushing the stroller away lets the mice die; doing nothing saves the mice but kills the baby. Defenders say everyone would save the baby, because human life is more valuable, and that using animals to develop life-saving medicine is equivalent.",
+      ex: "Debating whether testing a new asthma medicine on 200 mice is justified if it could help millions of children.",
+      link: { k: "none", title: "", text: "From the TOK box (p. 63), which asks what you think about this argument." } }
+  ]
+}
+];
+
+
+const CHAPTERS = [
+  { id: "ch-1-1", num: "1.1", title: "Psychology as a science", short: "Psychology as a science", pages: "pp. 5–8", groups: G11 },
+  { id: "ch-1-2", num: "1.2", title: "Quantitative and qualitative research", short: "Quant and qual", pages: "pp. 9–12", groups: G12 },
+  { id: "ch-1-3", num: "1.3", title: "Generalizability, credibility and bias", short: "Generalizability and bias", pages: "pp. 13–15", groups: G13 },
+  { id: "ch-1-4", num: "1.4", title: "The experiment", short: "The experiment", pages: "pp. 16–30", groups: G14A.concat(G14B, G14C),
+    tip: "Be mindful of the difference between <strong>random sampling</strong> (choosing the sample from the target population) and <strong>random group allocation</strong> (dividing the sample into groups). The IB accepts the softer approach to experiments: a continuum of <strong>true experiments, quasi-experiments and non-experiments</strong>. A study is definitely a non-experiment when no treatment is applied to either group. Natural experiments can be categorised as quasi-experimental." },
+  { id: "ch-1-5", num: "1.5", title: "Correlational studies", short: "Correlational studies", pages: "pp. 31–35", groups: G15 },
+  { id: "ch-1-6", num: "1.6", title: "Qualitative research", short: "Qualitative research", pages: "pp. 36–45", groups: G16A.concat(G16B) },
+  { id: "ch-1-7", num: "1.7", title: "Surveys and questionnaires", short: "Surveys and questionnaires", pages: "pp. 46–53", groups: G17,
+    tip: "For exam purposes, the IB Guide uses <strong>surveys and questionnaires interchangeably</strong>, so don't be afraid to get the distinction wrong. <strong>Paper 2 Section A is based on class practicals</strong>: you will need to make references to your class practicals, for example describing the study and explaining its aim. Applying psychometrics is beyond IB requirements; put your effort into high-quality questions and interpreting results." },
+  { id: "ch-1-8", num: "1.8", title: "Ethics in psychological research", short: "Ethics", pages: "pp. 54–57", groups: G18 },
+  { id: "ch-1-9", num: "1.9", title: "Research with animals", short: "Research with animals", pages: "pp. 58–63", groups: G19,
+    tip: "<strong>Animal research/animal models</strong> is a content point that can appear in Papers 1A and 1B. You need to be able to explain it and support your explanation with one example, such as Merzenich et al. (1984). To fully identify an animal model, say what animal is used, what behaviour is modelled, and what causal factor or hypothesis is tested." }
+];
+
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+const main = document.getElementById("main");
+const nav = document.getElementById("nav");
+const tabs = document.getElementById("tabs");
+const entries = [];
+const chEls = {};
+
+CHAPTERS.forEach(ch => {
+  const total = ch.groups.reduce((n, g) => n + g.terms.length, 0);
+  const keys = ch.groups.reduce((n, g) => n + g.terms.filter(t => t.key).length, 0);
+
+  const tab = document.createElement("button");
+  tab.type = "button"; tab.className = "tab"; tab.setAttribute("role", "tab"); tab.dataset.ch = ch.id;
+  tab.innerHTML = `<span class="tab-num">${ch.num}</span><span class="tab-body"><span class="tab-title">${esc(ch.short || ch.title)}</span><span class="tab-meta">${ch.pages} · ${total} terms</span></span>`;
+  tab.addEventListener("click", () => setChapter(ch.id, true));
+  tabs.appendChild(tab);
+
+  const wrap = document.createElement("div");
+  wrap.className = "chapter"; wrap.dataset.ch = ch.id;
+  wrap.innerHTML = `<div class="ch-head">
+      <h2><span class="num">${ch.num}</span><span>${esc(ch.title)}</span></h2>
+      ${ch.tip ? `<div class="tip"><b>Exam tip</b><p>${ch.tip}</p></div>` : ""}
+    </div>`;
+  chEls[ch.id] = wrap;
+
+  const navCh = document.createElement("li");
+  navCh.className = "rail-ch"; navCh.dataset.ch = ch.id;
+  navCh.textContent = ch.num + " " + ch.title;
+  nav.appendChild(navCh);
+
+  ch.groups.forEach((g, gi) => {
+    const secId = ch.id + "-" + g.id;
+    const sec = document.createElement("section");
+    sec.className = "group"; sec.id = secId; sec.dataset.ch = ch.id;
+    const keyCount = g.terms.filter(t => t.key).length;
+    const letter = String.fromCharCode(65 + gi);
+    sec.innerHTML = `<div class="group-head">
+        <div class="meta"><span class="n">${ch.num} ${letter}</span><span>${g.pages}</span><span>${g.terms.length} terms${keyCount ? ` · ${keyCount} key` : ""}</span></div>
+        <h3>${esc(g.title)}</h3>
+        <p>${esc(g.intro)}</p>
+      </div>`;
+    g.terms.forEach(t => {
+      const art = document.createElement("article");
+      art.className = "entry";
+      art.id = ch.id + "-" + slug(t.t);
+      const [kc, kl] = KIND[t.link.k];
+      art.innerHTML = `
+        <header class="entry-head">
+          <h4>${esc(t.t)}</h4>
+          <div class="tags">${t.key ? '<span class="tag key">Key term</span>' : ""}${t.hl ? '<span class="tag hl">Highlighted</span>' : ""}<span class="pg">${t.p}</span></div>
+        </header>
+        <button class="reveal" type="button" aria-expanded="false">Show answer</button>
+        <dl class="entry-body">
+          <div class="row"><dt>Definition</dt><dd>${t.own ? '<span class="wd wd-own">Glossary wording</span>' : '<span class="wd wd-text">Textbook, reworded</span>'}${esc(t.def)}</dd></div>
+          <div class="row"><dt>Real-life example</dt><dd>${esc(t.ex)}</dd></div>
+          <div class="row link"><dt>Textbook link</dt><dd><span class="kind ${kc}">${kl}</span>${t.link.title ? `<strong>${esc(t.link.title)}.</strong> ` : ""}${esc(t.link.text)}</dd></div>
+        </dl>`;
+      art.querySelector(".reveal").addEventListener("click", e => {
+        const open = art.classList.toggle("open");
+        e.currentTarget.textContent = open ? "Hide answer" : "Show answer";
+        e.currentTarget.setAttribute("aria-expanded", String(open));
+      });
+      sec.appendChild(art);
+      entries.push({ el: art, ch: ch.id, sec: secId, key: !!t.key, hay: [t.t, t.def, t.ex, t.link.title, t.link.text].join(" ").toLowerCase() });
+    });
+    wrap.appendChild(sec);
+
+    const li = document.createElement("li");
+    li.dataset.ch = ch.id;
+    li.innerHTML = `<a href="#${secId}" data-sec="${secId}"><span class="n">${letter}</span><span>${esc(g.title)}</span><span class="c"></span></a>`;
+    li.querySelector("a").addEventListener("click", e => {
+      e.preventDefault();
+      document.getElementById(secId).scrollIntoView({ block: "start" });
+    });
+    nav.appendChild(li);
+  });
+  main.appendChild(wrap);
+});
+
+const empty = document.createElement("p");
+empty.className = "none-found";
+empty.hidden = true;
+main.appendChild(empty);
+
+const q = document.getElementById("q");
+const keyBtn = document.getElementById("keyOnly");
+const testBtn = document.getElementById("testMode");
+const count = document.getElementById("count");
+const scopeNote = document.getElementById("scope");
+let active = CHAPTERS[0].id;
+
+function setChapter(id, fromClick) {
+  if (!chEls[id]) return;
+  active = id;
+  try { localStorage.setItem("u1-chapter", id); } catch (err) {}
+  if (fromClick) {
+    try { if (location.hash !== "#" + id) history.replaceState(null, "", "#" + id); } catch (err) {}
+    if (q.value) { q.value = ""; }
+  }
+  apply();
+  if (fromClick) document.getElementById("tabs").scrollIntoView({ block: "start" });
+}
+
+function apply() {
+  const term = q.value.trim().toLowerCase();
+  const searching = term.length > 0;
+  const keyOnly = keyBtn.getAttribute("aria-pressed") === "true";
+  const re = searching ? new RegExp("(^|[^a-z0-9])" + term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")) : null;
+  const perSec = {}, perCh = {};
+  let shown = 0, scopeTotal = 0;
+  entries.forEach(e => {
+    const inScope = searching || e.ch === active;
+    if (inScope) scopeTotal++;
+    const ok = inScope && (!keyOnly || e.key) && (!searching || re.test(e.hay));
+    e.el.hidden = !ok;
+    if (ok) { shown++; perSec[e.sec] = (perSec[e.sec] || 0) + 1; perCh[e.ch] = (perCh[e.ch] || 0) + 1; }
+  });
+  CHAPTERS.forEach(ch => {
+    chEls[ch.id].hidden = !perCh[ch.id];
+    const tab = tabs.querySelector(`[data-ch="${ch.id}"]`);
+    tab.setAttribute("aria-selected", String(!searching && ch.id === active));
+    tab.classList.toggle("dim", searching);
+  });
+  nav.querySelectorAll("li").forEach(li => {
+    const chOn = searching ? !!perCh[li.dataset.ch] : li.dataset.ch === active;
+    li.hidden = !chOn;
+    const a = li.querySelector("a");
+    if (a) {
+      const n = perSec[a.dataset.sec] || 0;
+      a.querySelector(".c").textContent = n;
+      a.classList.toggle("empty", !n);
+    }
+  });
+  scopeNote.hidden = !searching;
+  empty.hidden = shown > 0;
+  if (!shown) empty.textContent = searching ? `No terms match “${q.value.trim()}” in any chapter. Try a shorter word or turn off “Key terms only”.` : "No terms to show.";
+  count.textContent = searching ? `${shown} ${shown === 1 ? "match" : "matches"}` : (shown === scopeTotal ? `${shown} terms` : `${shown} of ${scopeTotal} terms`);
+}
+
+function pressToggle(btn, store) {
+  btn.addEventListener("click", () => {
+    const on = btn.getAttribute("aria-pressed") !== "true";
+    btn.setAttribute("aria-pressed", String(on));
+    if (btn === testBtn) {
+      document.body.classList.toggle("test", on);
+      if (on) entries.forEach(e => { e.el.classList.remove("open"); const r = e.el.querySelector(".reveal"); r.textContent = "Show answer"; r.setAttribute("aria-expanded", "false"); });
+    }
+    try { localStorage.setItem(store, on ? "1" : "0"); } catch (err) {}
+    apply();
+  });
+  try { if (localStorage.getItem(store) === "1") btn.click(); } catch (err) {}
+}
+
+function fromHash() {
+  const h = decodeURIComponent((location.hash || "").slice(1));
+  if (!h) return false;
+  if (chEls[h]) { setChapter(h, false); return true; }
+  const el = document.getElementById(h);
+  if (el) {
+    const host = el.closest(".chapter");
+    if (host) { setChapter(host.dataset.ch, false); el.scrollIntoView({ block: "start" }); return true; }
+  }
+  return false;
+}
+
+q.addEventListener("input", apply);
+pressToggle(keyBtn, "glossary-key-only");
+pressToggle(testBtn, "glossary-test-mode");
+window.addEventListener("hashchange", fromHash);
+if (!fromHash()) {
+  let saved = null;
+  try { saved = localStorage.getItem("u1-chapter"); } catch (err) {}
+  setChapter(saved && chEls[saved] ? saved : CHAPTERS[0].id, false);
+}
+</script>
+
+<footer class="site-credits" aria-label="Copyright and sources">
+<style>
+.site-credits{max-width:960px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px));font-size:13px;line-height:1.55;color:var(--muted,#55646E)}
+.site-credits .sc-in{border-top:1px solid var(--line,var(--rule,#D6DEDC));padding-top:20px;display:grid;gap:8px}
+.site-credits h2{font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin:0;color:var(--muted,#55646E);font-weight:600}
+.site-credits p{margin:0;max-width:78ch}
+.site-credits cite{font-style:italic}
+</style>
+<div class="sc-in">
+<h2>Copyright and sources</h2>
+<p><strong>IB.</strong> This site is not produced, reviewed or endorsed by the International Baccalaureate Organization. International Baccalaureate® and IB® are registered trademarks of the International Baccalaureate Organization.</p>
+<p><strong>Textbook.</strong> Glossary definitions are condensed from, and page references and term order follow, Popov, A. (2025). <cite>Oxford Resources for IB DP Psychology: Course Book</cite>. Oxford University Press (ISBN 9781382056663), © Oxford University Press. Definitions marked “Textbook, reworded” condense the textbook’s own definitions; those marked “Glossary wording”, and all real-life examples, are written for this guide. This site is not affiliated with or endorsed by Oxford University Press or the author.</p>
+<p><strong>Original material.</strong> Real-life examples and site design © 2026 the site author. For student revision only; not for sale or redistribution.</p>
+<p>Rights holders who would like any material removed should contact the site author.</p>
+</div>
+</footer>
+
+</body></html>

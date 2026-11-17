@@ -1,0 +1,111 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]{display:none!important}</style></head><body>
+<title>IBDP Psychology Guide</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a short index — site bar, page title, then a stack of linked rows */
+:root {
+  --bg: #F2F5F4; --surface: #FFFFFF; --ink: #15222A; --muted: #55646E; --line: #D6DEDC;
+  --accent: #1B7357; --accent-soft: #E1EFE9;
+  --f-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body: "Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #0F1619; --surface: #162026; --ink: #E3EBE9; --muted: #9AA9A7; --line: #283439; --accent: #5DC39B; --accent-soft: #15362A; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --bg: #0F1619; --surface: #162026; --ink: #E3EBE9; --muted: #9AA9A7; --line: #283439; --accent: #5DC39B; --accent-soft: #15362A; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+.wrap { max-width: 960px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.sitenav { background: var(--surface); border-bottom: 1px solid var(--line); }
+.sitenav .wrap { max-width: 1120px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 16px; padding-block: 8px; }
+.sitenav .brand { font-family: var(--f-display); font-weight: 700; font-size: 17px; letter-spacing: -.01em; color: var(--ink); text-decoration: none; }
+.sitenav .navlinks { display: flex; flex-wrap: wrap; gap: 4px; }
+.sitenav .navlinks a { padding: 6px 12px; border-radius: 6px; color: var(--ink); text-decoration: none; font-weight: 500; font-size: 15px; }
+.sitenav .navlinks a:hover { background: var(--accent-soft); }
+.sitenav .navlinks a[aria-current="page"] { background: var(--accent); color: var(--surface); }
+main { padding-block: 48px 64px; display: grid; gap: 40px; }
+.intro { display: grid; gap: 12px; }
+.eyebrow { font-family: var(--f-mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0; }
+h1 { font-family: var(--f-display); font-weight: 700; font-size: clamp(2.2rem, 6vw, 3.5rem); line-height: 1.04; letter-spacing: -.025em; margin: 0; text-wrap: balance; }
+.lede { margin: 0; max-width: 60ch; color: var(--muted); font-size: 1.08rem; }
+.list { display: grid; gap: 12px; }
+.list h2 { font-family: var(--f-mono); font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 2px; }
+.row {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 24px; align-items: center;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px;
+  color: var(--ink); text-decoration: none;
+}
+.row:hover { border-color: var(--accent); }
+.row:focus-visible, .sitenav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.row-body { display: grid; gap: 4px; min-width: 0; }
+.row-kicker { font-family: var(--f-mono); font-size: 12px; color: var(--accent); letter-spacing: .04em; }
+.row h3 { font-family: var(--f-display); font-weight: 700; font-size: 1.5rem; line-height: 1.15; letter-spacing: -.01em; margin: 0; text-wrap: balance; }
+.row p { margin: 0; color: var(--muted); max-width: 62ch; }
+.row .go { font-weight: 600; color: var(--accent); white-space: nowrap; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; padding: 0; list-style: none; }
+.chips a { display: inline-flex; gap: 6px; align-items: baseline; padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: 14px; color: var(--ink); text-decoration: none; background: var(--bg); }
+.chips a:hover { border-color: var(--accent); color: var(--accent); }
+.chips b { font-family: var(--f-mono); font-weight: 500; font-size: 12px; color: var(--accent); }
+.unit { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; display: grid; gap: 8px; }
+.unit-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; }
+.unit-head a.title { color: var(--ink); text-decoration: none; }
+.unit-head a.title:hover h3 { color: var(--accent); }
+.unit h3 { font-family: var(--f-display); font-weight: 700; font-size: 1.5rem; line-height: 1.15; letter-spacing: -.01em; margin: 0; }
+.unit .meta { font-family: var(--f-mono); font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.unit p { margin: 0; color: var(--muted); max-width: 66ch; }
+.unit .open { justify-self: start; margin-top: 6px; padding: 8px 16px; border-radius: 8px; background: var(--accent); color: var(--surface); font-weight: 600; text-decoration: none; }
+.unit .open:hover { filter: brightness(1.08); }
+.note { font-size: 14px; color: var(--muted); margin: 0; max-width: 70ch; }
+@media (max-width: 600px) {
+  main { padding-block: 32px 48px; gap: 32px; }
+  .row { grid-template-columns: minmax(0, 1fr); padding: 18px; }
+  .unit { padding: 18px; }
+}
+</style>
+<nav class="sitenav" aria-label="Site">
+  <div class="wrap"><a class="brand" href="index.html">IBDP Psychology Guide</a><div class="navlinks"><a href="glossary.html">Glossary</a></div></div>
+</nav>
+
+<main class="wrap">
+  <header class="intro">
+    <p class="eyebrow">IB Diploma Programme · Psychology</p>
+    <h1>IBDP Psychology Guide</h1>
+    <p class="lede">Revision glossaries for each unit of the textbook, with a definition, a real-life example and the linked study for every key term.</p>
+  </header>
+
+  <section class="list" aria-labelledby="sections-title">
+    <h2 id="sections-title">Sections</h2>
+    <a class="row" href="glossary.html">
+      <div class="row-body">
+        <span class="row-kicker">2 units · 448 terms</span>
+        <h3>Glossary</h3>
+        <p>Definitions for every key term, concept and highlighted word, unit by unit. Each entry has a definition, a real-life example and the study the textbook links it to.</p>
+      </div>
+      <span class="go">Open →</span>
+    </a>
+  </section>
+</main>
+
+<footer class="site-credits" aria-label="Copyright and sources">
+<style>
+.site-credits{max-width:960px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-right,0px)) 40px max(16px,env(safe-area-inset-left,0px));font-size:13px;line-height:1.55;color:var(--muted,#55646E)}
+.site-credits .sc-in{border-top:1px solid var(--line,var(--rule,#D6DEDC));padding-top:20px;display:grid;gap:8px}
+.site-credits h2{font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin:0;color:var(--muted,#55646E);font-weight:600}
+.site-credits p{margin:0;max-width:78ch}
+.site-credits cite{font-style:italic}
+</style>
+<div class="sc-in">
+<h2>Copyright and sources</h2>
+<p><strong>IB.</strong> This site is not produced, reviewed or endorsed by the International Baccalaureate Organization. International Baccalaureate® and IB® are registered trademarks of the International Baccalaureate Organization.</p>
+<p><strong>Textbook.</strong> Glossary definitions are condensed from, and page references and term order follow, Popov, A. (2025). <cite>Oxford Resources for IB DP Psychology: Course Book</cite>. Oxford University Press (ISBN 9781382056663), © Oxford University Press. Definitions marked “Textbook, reworded” condense the textbook’s own definitions; those marked “Glossary wording”, and all real-life examples, are written for this guide. This site is not affiliated with or endorsed by Oxford University Press or the author.</p>
+<p><strong>Original material.</strong> Real-life examples and site design © 2026 the site author. For student revision only; not for sale or redistribution.</p>
+<p>Rights holders who would like any material removed should contact the site author.</p>
+</div>
+</footer>
+
+</body></html>
